@@ -1,6 +1,6 @@
 import { MOCK_POST_LIST } from '@/constants/mock'
 import PostItem from '@/features/posts/components/PostItem'
-import { FormattedPost } from '@/features/posts/types/post.types'
+import { FormattedPost } from '@/features/posts/types/post'
 
 const PostList = async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000))
