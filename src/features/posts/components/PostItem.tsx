@@ -13,7 +13,7 @@ const PostItem = ({ title, preview, tags }: Props) => {
       </Link>
       {tags?.map((tag) => {
         return (
-          <span key={tag} className={'text-blue-500'}>
+          <span key={tag} className={'text-blue-500 pr-1'}>
             {tag}
           </span>
         )

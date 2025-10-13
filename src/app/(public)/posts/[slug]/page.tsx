@@ -5,10 +5,10 @@ import { NextParsedUrlQuery } from 'next/dist/server/request-meta'
 import Link from 'next/link'
 
 type Props = {
-  params: NextParsedUrlQuery
+  params: Promise<NextParsedUrlQuery>
 }
-const Page = ({ params }: Props) => {
-  const { slug } = params
+const Page = async ({ params }: Props) => {
+  const { slug } = await params
   const { id, title, date, last_modified } = MOCK_POST_DETAIL //TODO from db
 
   return (
