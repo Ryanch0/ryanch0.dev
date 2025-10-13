@@ -11,40 +11,44 @@ export const MOCK_POST_LIST = [
   {
     id: 1,
     title: 'Post1',
+    slug: 'Post1',
     date: 'August 18th, 2025',
     last_modified: 'September 27th, 2025',
     preview: 'PREVIEW',
-    contents: 'MARKDOWN ...',
+    content: 'MARKDOWN ...',
     tags: ['react', 'css'],
     meta_description: 'for meta-description'
   },
   {
     id: 2,
     title: 'Post2',
+    slug: 'Post2',
     date: 'August 18th, 2025',
     last_modified: 'September 27th, 2025',
     preview: 'PREVIEW',
-    contents: 'MARKDOWN ...',
+    content: 'MARKDOWN ...',
     tags: ['react', 'css'],
     meta_description: 'for meta-description'
   },
   {
     id: 3,
     title: 'Post3',
+    slug: 'Post3',
     date: 'August 18th, 2025',
     last_modified: 'September 27th, 2025',
     preview: 'PREVIEW',
-    contents: 'MARKDOWN ...',
+    content: 'MARKDOWN ...',
     tags: ['react', 'css'],
     meta_description: 'for meta-description'
   },
   {
     id: 4,
     title: 'Post4',
+    slug: 'Post4',
     date: 'August 18th, 2025',
     last_modified: 'September 27th, 2025',
     preview: 'PREVIEW',
-    contents: 'MARKDOWN ...',
+    content: 'MARKDOWN ...',
     tags: ['react', 'css'],
     meta_description: 'for meta-description'
   }

@@ -1,11 +1,13 @@
 export type Post = {
   id: number
   title: string
-  date: Date
-  last_modified: Date
+  slug: string
+  thumbnail_url?: string
   preview: string
-  contents: string
-  tags: string[]
+  content: string
+  tags?: string[]
+  date: Date
+  last_modified?: Date
   meta_description: string
 }
 
