@@ -7,10 +7,12 @@ export async function middleware(request: NextRequest) {
 
   const supabase = await createClientForServer()
 
-  const data = await supabase.auth.getSession()
-  const session = data.data.session
+  const {
+    data: { user },
+    error
+  } = await supabase.auth.getUser()
 
-  if (!session) {
+  if (!user || error) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
