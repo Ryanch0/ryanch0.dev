@@ -4,11 +4,12 @@ type Props = {
   title: string
   preview: string
   tags?: string[]
+  slug: string
 }
-const PostItem = ({ title, preview, tags }: Props) => {
+const PostItem = ({ title, preview, tags, slug }: Props) => {
   return (
     <li>
-      <Link href={`/posts/${title}`}>
+      <Link href={`/posts/${slug}`}>
         <h2 className={'text-red-700'}>{title}</h2>
       </Link>
       {tags?.map((tag) => {

@@ -1,14 +1,15 @@
-import { MOCK_MARKDOWN } from '@/constants/mock'
 import renderMdxComponents from '@/features/markdown/components/renderMdxComponents'
 import { MDXRemote } from 'next-mdx-remote-client/rsc'
 
-const PostDetail = async () => {
+type Props = {
+  content: string
+}
+const PostDetail = async ({ content }: Props) => {
   const components = renderMdxComponents() //TODO markdown styling
-  await new Promise((resolve) => setTimeout(resolve, 100)) //TODO fetch data
 
   return (
     <div className="prose">
-      <MDXRemote source={MOCK_MARKDOWN} components={components} />
+      <MDXRemote source={content} components={components} />
     </div>
   )
 }

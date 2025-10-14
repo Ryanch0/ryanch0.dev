@@ -1,11 +1,11 @@
-import { MOCK_TAG_LIST } from '@/constants/mock'
+import { getAllTags } from '@/lib/queries/posts'
 
 const TagList = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 1000))
+  const tags = await getAllTags()
 
   return (
     <ul>
-      {MOCK_TAG_LIST.map((tag) => {
+      {tags.map((tag) => {
         return <li key={tag}>{tag}</li>
       })}
     </ul>
