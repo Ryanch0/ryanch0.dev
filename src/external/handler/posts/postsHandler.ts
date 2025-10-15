@@ -7,7 +7,7 @@ import {
   findPostBySlug,
   findPostsByTag,
   updatePost
-} from '@/external/repository/posts'
+} from '@/external/repository/posts-server'
 import {
   generatePreview,
   generateSlug,
