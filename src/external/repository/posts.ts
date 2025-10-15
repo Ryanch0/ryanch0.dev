@@ -10,7 +10,7 @@ export const findAllPosts = async () => {
     .order('date', { ascending: false })
 
   if (error) {
-    throw error //TODO error.tsx ('use client') 필요
+    throw error
   }
 
   return posts

@@ -1,2 +1,7 @@
 'use client'
-//TODO ERROR_PAGE
+
+const Error = () => {
+  return <>ERROR PAGE</>
+}
+
+export default Error

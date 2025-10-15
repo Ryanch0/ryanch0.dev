@@ -5,7 +5,7 @@ type Props = {
   content: string
 }
 const PostDetail = async ({ content }: Props) => {
-  const components = renderMdxComponents() //TODO markdown styling
+  const components = renderMdxComponents()
 
   return (
     <div className="prose">
