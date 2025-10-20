@@ -1,8 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-
 import MarkDownField from '@/features/markdown/components/MarkDownField'
+import useMarkDownFormField from '@/features/markdown/hooks/useMarkDownFormField'
 
 type Props = {
   title?: string
@@ -11,13 +10,19 @@ type Props = {
   action: (formData: FormData) => Promise<void>
 }
 const PostForm = ({ title, content = '', tags, action }: Props) => {
-  const [value, setValue] = useState<string | undefined>(content)
+  const { value, setValue, handleDrop } = useMarkDownFormField({
+    defaultValue: content
+  })
 
   return (
     <form action={action}>
       <input name="title" type="text" defaultValue={title} />
       <input name="tags" type="text" defaultValue={tags} />
-      <MarkDownField defaultValue={value} setValue={setValue} />
+      <MarkDownField
+        value={value}
+        setValue={setValue}
+        handleDrop={handleDrop}
+      />
       <input name="content" type={'hidden'} value={value} />
       <button type="submit">Submit</button>
     </form>
