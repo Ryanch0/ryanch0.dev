@@ -19,12 +19,12 @@ const Page = async ({ searchParams }: Props) => {
         <p>A space for storing insights</p>
         <span>by</span> <MainLink />
       </div>
-      <main className={'flex justify-between'}>
-        <Suspense fallback={'fetching post list...'}>
-          <PostList tag={tagName} />
-        </Suspense>
-        <Suspense fallback={'fetching tags list...'}>
+      <main className={'mt-6 flex flex-col'}>
+        <Suspense fallback={''}>
           <TagList />
+        </Suspense>
+        <Suspense fallback={''}>
+          <PostList tag={tagName} />
         </Suspense>
       </main>
     </div>

@@ -1,5 +1,5 @@
 import { ICON_LIST } from '@/constants/iconList'
-import LinkIcon from '@/shared/components/LinkIcon'
+import LinkIcon from '@/shared/components/Header/components/LinkIcon'
 
 const Page = () => {
   return (

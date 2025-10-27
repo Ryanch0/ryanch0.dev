@@ -2,7 +2,7 @@ import { Post } from '@/external/types/post/entity'
 
 export type PostListItem = Pick<
   Post,
-  'id' | 'title' | 'preview' | 'tags' | 'slug'
+  'id' | 'title' | 'preview' | 'tags' | 'slug' | 'date'
 >
 
 export type PostForm = Pick<Post, 'id' | 'title' | 'content' | 'tags'>

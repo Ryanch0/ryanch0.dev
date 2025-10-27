@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import Header from '@/shared/components/Header'
+import Header from '@/shared/components/Header/components/Header'
 
 export default function AuthLayout({ children }: PropsWithChildren) {
   return (
