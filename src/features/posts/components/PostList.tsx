@@ -4,7 +4,8 @@ import {
   listPostByTag
 } from '@/external/handler/posts/postsHandler'
 import PostItem from '@/features/posts/components/PostItem'
-import Link from 'next/link'
+import groupHoverStyles from '@/features/posts/utils/groupHoverStyles'
+import groupPostsByYear from '@/utils/groupPostsByYear'
 import { redirect } from 'next/navigation'
 
 type Props = {
@@ -12,30 +13,46 @@ type Props = {
 }
 const PostList = async ({ tag }: Props) => {
   const data = tag ? await listPostByTag(tag) : await listAllPostsHandler()
+  const postsByYear = groupPostsByYear(data)
 
   if (tag && data.length === 0) {
     return redirect(PATH.POSTS)
   }
 
-  if (data.length === 0) return <>EMPTY CASE</>
-
   return (
-    <ul>
-      {data.map((post) => {
-        return (
-          <PostItem
-            key={post.id}
-            preview={post.preview}
-            tags={post.tags}
-            title={
-              <Link href={`${PATH.POSTS}/${post.slug}`}>
-                <h2 className={'text-red-700'}>{post.title}</h2>
-              </Link>
-            }
-          />
-        )
-      })}
-    </ul>
+    <div className="[&:has(section:hover)>section:not(:hover)_*]:text-base-light/50 dark:[&:has(section:hover)>section:not(:hover)_*]:text-base-dark/50">
+      {Object.entries(postsByYear)
+        .sort(([a], [b]) => Number(b) - Number(a))
+        .map(([year, yearPosts]) => {
+          return (
+            <section
+              key={year}
+              className={
+                'group/year border-border flex flex-col border-y duration-300 md:flex-row'
+              }
+            >
+              <div className={'my-6 md:my-6 md:w-[15%]'}>
+                <h3 className={'text-lg'}>
+                  <span className={groupHoverStyles.year}>{year}</span>
+                </h3>
+              </div>
+              <ul className="md:my-6 md:w-[85%]">
+                {yearPosts.map((post) => {
+                  return (
+                    <PostItem
+                      key={post.id}
+                      preview={post.preview}
+                      slug={post.slug}
+                      title={post.title}
+                      date={post.date}
+                    />
+                  )
+                })}
+              </ul>
+            </section>
+          )
+        })}
+    </div>
   )
 }
 
