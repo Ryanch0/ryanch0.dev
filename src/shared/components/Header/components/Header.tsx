@@ -1,5 +1,5 @@
 import { FaUserShield } from 'react-icons/fa'
-import { IoAddOutline } from 'react-icons/io5'
+import { FiPlus } from 'react-icons/fi'
 
 import { PATH } from '@/constants/path'
 import { authCheckHandler } from '@/external/handler/auth/authHandler'
@@ -12,16 +12,20 @@ const Header = async () => {
   const { isAuthorized } = await authCheckHandler()
   const authLink = isAuthorized ? (
     <Link href={PATH.WRITE}>
-      <IoAddOutline
+      <FiPlus
         size={38}
-        className={'cursor-pointer p-1.5 transition-transform hover:scale-110'}
+        className={
+          'cursor-pointer p-1.5 transition-transform duration-400 ease-out hover:scale-110'
+        }
       />
     </Link>
   ) : (
     <Link href={PATH.LOGIN}>
       <FaUserShield
         size={38}
-        className={'cursor-pointer p-1.5 transition-transform hover:scale-110'}
+        className={
+          'cursor-pointer p-1.5 transition-transform duration-400 ease-out hover:scale-110'
+        }
       />
     </Link>
   )

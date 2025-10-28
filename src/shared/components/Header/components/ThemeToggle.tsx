@@ -26,7 +26,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="transition-transform duration-500 ease-out hover:scale-110 active:scale-95 active:rotate-180"
+      className="transition-transform duration-400 ease-out hover:scale-110 active:scale-95 active:rotate-180"
       aria-label="Toggle theme"
     >
       <ToggleIcon icon={MdLightMode} className={'dark:hidden'} />
