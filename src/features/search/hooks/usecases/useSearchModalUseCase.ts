@@ -1,11 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { PATH } from '@/constants/path'
 import useDebounce from '@/features/search/hooks/useDebounce'
 import useFetchSearchedPosts from '@/features/search/hooks/useFetchSearchedPosts'
+import { usePathname, useRouter } from 'next/navigation'
 
-const useSearchModalUseCase = ({ onClose }: { onClose: () => void }) => {
+const useSearchModalUseCase = ({
+  onClose,
+  isOpen
+}: {
+  onClose: () => void
+  isOpen: boolean
+}) => {
   const [search, setSearch] = useState('')
-  const debouncedSearch = useDebounce(search, 300)
+  const debouncedSearch = useDebounce(search, 200)
+  const pathname = usePathname()
+  const { push } = useRouter()
 
   const { posts, loading } = useFetchSearchedPosts({ search: debouncedSearch })
 
@@ -17,7 +27,31 @@ const useSearchModalUseCase = ({ onClose }: { onClose: () => void }) => {
     onClose()
   }
 
-  return { search, posts, loading, onChange, onCloseModal }
+  useEffect(() => {
+    if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      onCloseModal()
+    }
+  }, [pathname])
+
+  const onSelect = (slug: string) => {
+    const target = `${PATH.POSTS}/${slug}`
+
+    if (pathname === target) {
+      return onCloseModal()
+    }
+
+    return push(target)
+  }
+
+  return {
+    search,
+    posts,
+    loading,
+    onChange,
+    onCloseModal,
+    onSelect
+  }
 }
 
 export default useSearchModalUseCase
