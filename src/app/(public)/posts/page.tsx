@@ -1,7 +1,9 @@
 import { Suspense } from 'react'
 
 import PostList from '@/features/posts/components/PostList'
+import PostListSkeleton from '@/features/posts/components/PostListSkeleton'
 import TagList from '@/features/tags/components/TagList'
+import TagListSkeleton from '@/features/tags/components/TagListSkeleton'
 import MainLink from '@/shared/components/MainLink'
 import { SearchParams } from 'next/dist/server/request/search-params'
 
@@ -20,10 +22,10 @@ const Page = async ({ searchParams }: Props) => {
         <span>by</span> <MainLink />
       </div>
       <main className={'mt-6 flex flex-col'}>
-        <Suspense fallback={''}>
+        <Suspense fallback={<TagListSkeleton />}>
           <TagList />
         </Suspense>
-        <Suspense fallback={''}>
+        <Suspense fallback={<PostListSkeleton />}>
           <PostList tag={tagName} />
         </Suspense>
       </main>
