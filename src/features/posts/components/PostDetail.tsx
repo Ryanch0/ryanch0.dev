@@ -1,4 +1,3 @@
-import MarkDownTOC from '@/features/markdown/components/MarkDownTOC'
 import renderMdxComponents from '@/features/markdown/components/renderMdxComponents'
 import { MDXRemote } from 'next-mdx-remote-client/rsc'
 
@@ -11,7 +10,6 @@ const PostDetail = ({ content }: Props) => {
   return (
     <div className="prose prose-custom mt-16 max-w-3xl">
       <MDXRemote source={content} components={components} />
-      <MarkDownTOC />
     </div>
   )
 }

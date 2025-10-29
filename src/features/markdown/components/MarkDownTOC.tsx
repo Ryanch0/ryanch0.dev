@@ -1,20 +1,29 @@
 'use client'
 
 import useMarkDownToc from '@/features/markdown/hooks/useMarkDownToc'
+import useTocScrollEffect from '@/features/posts/hooks/useTocScrollEffect'
 import Link from 'next/link'
 
 const MarkDownTOC = () => {
   const { toc } = useMarkDownToc()
+  useTocScrollEffect()
 
   return (
-    <ul>
-      <h2>TOC</h2>
+    <ul id={'toc'}>
       {toc.map(({ key, value, headTag }) => {
         return (
-          <li key={`${headTag}-${key}`}>
+          <li
+            key={`${headTag}-${key}`}
+            className={
+              'mt-1 origin-left transition-transform has-[.active]:scale-105'
+            }
+          >
             <Link
+              data-toc-link
               href={`#${key}`}
-              className={'text-base-light dark:text-base-dark'}
+              className={
+                'decoration-underline-light dark:decoration-underline-dark hover:text-accent-light dark:hover:text-accent-dark text-second-light/50 dark:text-second-dark text-sm underline decoration-1 underline-offset-4 opacity-80 transition-colors'
+              }
             >
               {value}
             </Link>

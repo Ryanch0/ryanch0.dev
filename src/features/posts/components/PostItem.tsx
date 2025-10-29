@@ -20,13 +20,10 @@ const PostItem = ({ title, slug, date }: Props) => {
         'group/post [:has(section:hover)_*]:text-base-light/50 dark:[:has(section:hover)_*]:text-base-dark/50 block not-first:py-4'
       }
     >
-      <Link
-        href={`${PATH.POSTS}/${slug}`}
-        className={'rounded-lg transition-colors'}
-      >
+      <Link href={`${PATH.POSTS}/${slug}`} className={'rounded-lg'}>
         <div className={`w-full ${groupHoverStyles.post}`}>
           <div className={'flex items-center justify-between'}>
-            <h4 className={'mt-1 text-lg transition-colors'}>
+            <h4 className={'mt-1 text-lg'}>
               <span>{title}</span>
             </h4>
             <time>{`${month}. ${day}.`}</time>
