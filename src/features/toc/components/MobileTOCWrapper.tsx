@@ -3,7 +3,7 @@
 import { ReactNode, useLayoutEffect, useRef, useState } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
-import CircularScrollProgress from '@/features/toc/components/CircularProgressBar'
+import CircularScrollProgress from '@/features/toc/components/CircularScrollProgressBar'
 import { motion } from 'framer-motion'
 
 type Props = {
@@ -46,7 +46,7 @@ const MobileTOCWrapper = ({ title, children, isVisible = false }: Props) => {
           borderRadius: isOpen ? 16 : 24
         }}
         transition={{ duration: 0.35, ease: 'easeInOut' }}
-        className={`${isOpen ? 'pt-1' : ''} relative overflow-hidden bg-white/75 shadow-lg backdrop-blur-2xl backdrop-saturate-[1.2] select-none dark:bg-zinc-700/70`}
+        className={`${isOpen ? 'pt-1' : ''} relative overflow-hidden bg-white/75 shadow-lg backdrop-blur-2xl backdrop-saturate-[1.2] select-none dark:bg-zinc-700/75`}
       >
         <button
           className="flex w-full cursor-pointer items-center justify-between gap-3 px-3 py-1"
