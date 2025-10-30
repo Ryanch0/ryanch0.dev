@@ -4,6 +4,8 @@ import { findPostBySlugHandler } from '@/external/handler/posts/postsHandler'
 import { findPostBySlug } from '@/external/repository/posts-server'
 import { deletePostAction } from '@/features/posts/actions/post'
 import PostDetail from '@/features/posts/components/PostDetail'
+import PostNavigation from '@/features/posts/components/PostNavigation'
+import Footer from '@/shared/components/Footer'
 import MainLink from '@/shared/components/MainLink'
 import { Metadata } from 'next'
 import { NextParsedUrlQuery } from 'next/dist/server/request-meta'
@@ -42,40 +44,56 @@ const Page = async ({ params }: Props) => {
   const { isAuthorized } = await authCheckHandler()
 
   return (
-    <div className={'pt-18'}>
-      <h2 className={'title-style'}>{data.title}</h2>
-      <div className={'second-font-style py-1'}>
-        <p>{data.date}</p>
-        <span>by</span> <MainLink />
-      </div>
-      <div className="mt-1 flex gap-2 text-sm">
-        {data.tags?.map((tag) => {
-          return (
-            <span
-              key={tag}
-              className="bg-section-light dark:bg-section-dark text-second-light dark:text-second-dark rounded-sm px-2 py-0.5"
-            >
-              {tag}
-            </span>
-          )
-        })}
-      </div>
-      {isAuthorized && (
-        <div className={'flex gap-1'}>
-          <Link
-            className={'ml-auto hover:opacity-70'}
-            href={`${PATH.WRITE}/${data.id}`}
-          >
-            Update
-          </Link>
-          <form action={deletePostAction.bind(null, data.id)}>
-            <button type="submit" className={'cursor-pointer hover:opacity-70'}>
-              Delete
-            </button>
-          </form>
+    <div className={'flex flex-col pt-18'}>
+      <div>
+        <h2 className={'title-style'}>{data.title}</h2>
+        <div className={'second-font-style py-1'}>
+          <p>{data.date}</p>
+          <span>by</span> <MainLink />
         </div>
-      )}
-      <PostDetail content={data.content} title={data.title} />
+        <div className="mt-1 flex gap-2 text-sm">
+          {data.tags?.map((tag) => {
+            return (
+              <span
+                key={tag}
+                className="bg-section-light dark:bg-section-dark text-second-light dark:text-second-dark rounded-sm px-2 py-0.5"
+              >
+                {tag}
+              </span>
+            )
+          })}
+        </div>
+        {isAuthorized && (
+          <div className={'flex gap-1'}>
+            <Link
+              className={'ml-auto hover:opacity-70'}
+              href={`${PATH.WRITE}/${data.id}`}
+            >
+              Update
+            </Link>
+            <form action={deletePostAction.bind(null, data.id)}>
+              <button
+                type="submit"
+                className={'cursor-pointer hover:opacity-70'}
+              >
+                Delete
+              </button>
+            </form>
+          </div>
+        )}
+        <PostDetail content={data.content} title={data.title} />
+      </div>
+      <PostNavigation
+        previousPost={{
+          slug: 'redesign-blog',
+          title: 'Redesigning My Blog'
+        }}
+        nextPost={{
+          slug: 'svelte-compiler-operation',
+          title: 'How Does the Svelte Compiler Work?'
+        }}
+      />
+      <Footer />
     </div>
   )
 }

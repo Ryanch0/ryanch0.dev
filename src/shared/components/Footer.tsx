@@ -4,7 +4,9 @@ import MainLink from '@/shared/components/MainLink'
 const Footer = () => {
   return (
     <footer
-      className={'mt-auto mb-8 flex items-center justify-between text-sm'}
+      className={
+        'mt-auto mb-6 flex items-center justify-between text-sm md:mb-8'
+      }
     >
       <div>
         Copyright ©
