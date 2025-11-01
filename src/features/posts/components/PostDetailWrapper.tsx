@@ -28,7 +28,7 @@ const PostDetailWrapper = ({ title, children }: Props) => {
         <TOC />
       </aside>
 
-      <div className={'block xl:hidden'}>
+      <div className={'visible opacity-100 xl:invisible xl:opacity-0'}>
         <MobileTOCWrapper title={title} isVisible={isContentVisible}>
           <TOC isMobile />
         </MobileTOCWrapper>

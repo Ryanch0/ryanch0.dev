@@ -13,13 +13,18 @@ const TOC = ({ isMobile = false }: Props) => {
 
   return (
     <ul id={isMobile ? 'toc-mobile' : 'toc-desktop'}>
-      {toc.map(({ key, value, headTag }) => {
+      {toc.map(({ key, value, headTag }, index) => {
         return (
           <li
             key={`${headTag}-${key}`}
             className={
-              'mt-1 origin-left transition-transform has-[.active]:scale-105'
+              'animate-fade-in mt-1 origin-left transition-transform has-[.active]:scale-105'
             }
+            style={{
+              animationDelay: `${index * 100}ms`,
+              opacity: 0,
+              animationFillMode: 'forwards'
+            }}
           >
             <Link
               data-toc-link
