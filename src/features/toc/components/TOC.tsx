@@ -12,11 +12,11 @@ const TOC = ({ isMobile = false }: Props) => {
   useTocScrollEffect(isMobile)
 
   return (
-    <ul id={isMobile ? 'toc-mobile' : 'toc-desktop'}>
+    <ul id={isMobile ? 'toc-mobile' : 'toc-desktop'} className="w-full">
       {toc.map(({ key, value, headTag }, index) => {
         return (
           <li
-            key={`${headTag}-${key}`}
+            key={`${headTag}-${key}-${value}`}
             className={
               'animate-fade-in mt-1 origin-left transition-transform has-[.active]:scale-105'
             }

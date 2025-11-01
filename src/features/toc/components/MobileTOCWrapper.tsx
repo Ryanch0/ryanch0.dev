@@ -35,7 +35,7 @@ const MobileTOCWrapper = ({ title, children, isVisible = false }: Props) => {
     <motion.div
       className="fixed left-1/2 z-40 -translate-x-1/2"
       animate={{
-        top: isVisible ? '3.5rem' : '-12rem'
+        top: isVisible ? '3.5rem' : '-20rem'
       }}
       initial={{ top: '-5rem' }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
@@ -75,7 +75,7 @@ const MobileTOCWrapper = ({ title, children, isVisible = false }: Props) => {
           }}
           initial={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="overflow-hidden"
+          className="overflow-y-auto"
           style={{
             pointerEvents: isOpen ? 'auto' : 'none'
           }}

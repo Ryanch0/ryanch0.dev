@@ -18,24 +18,28 @@ const PostItem = ({ title, slug, date, subtitle }: Props) => {
   return (
     <li
       className={
-        'group/post [:has(section:hover)_*]:text-base-light/50 dark:[:has(section:hover)_*]:text-base-dark/50 block not-first:py-4'
+        'group/post [:has(section:hover)_*]:text-base-light/50 dark:[:has(section:hover)_*]:text-base-dark/50 block not-first:pt-6'
       }
     >
       <Link href={`${PATH.POSTS}/${slug}`} className={'rounded-lg'}>
         <div className={`w-full ${groupHoverStyles.post}`}>
           <div className={'flex items-center justify-between'}>
-            <div>
-              <h4 className={'mt-1 text-lg'}>
+            <div className={'min-w-0 flex-1 truncate'}>
+              <h4 className={'mt-1 truncate text-lg'}>
                 <span>{title}</span>
               </h4>
               <p
-                className={'text-[0.94rem] text-[#999999] dark:text-[#808080]'}
+                className={
+                  'truncate text-[0.94rem] text-[#999999] dark:text-[#808080]'
+                }
               >
                 {subtitle}
               </p>
             </div>
             <time
-              className={'text-[0.94rem] text-[#999999] dark:text-[#808080]'}
+              className={
+                "ml-4' text-[0.94rem] whitespace-nowrap text-[#999999] dark:text-[#808080]"
+              }
             >{`${month}. ${day}.`}</time>
           </div>
         </div>
