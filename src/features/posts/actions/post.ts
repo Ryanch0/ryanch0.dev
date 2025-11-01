@@ -17,9 +17,10 @@ export const createPostAction = async (formData: FormData) => {
     redirect(PATH.LOGIN)
   }
   const title = formData.get('title') as string
+  const subtitle = formData.get('subtitle') as string
   const content = formData.get('content') as string
   const tagsString = formData.get('tags') as string
-  const { slug } = await createPostHandler(title, content, tagsString)
+  const { slug } = await createPostHandler(title, subtitle, content, tagsString)
   revalidatePath(PATH.POSTS)
   redirect(`${PATH.POSTS}/${slug}`)
 }
@@ -32,9 +33,16 @@ export const updatePostAction = async (id: string, formData: FormData) => {
   }
 
   const title = formData.get('title') as string
+  const subtitle = formData.get('subtitle') as string
   const content = formData.get('content') as string
   const tagsString = formData.get('tags') as string
-  const { slug } = await updatePostHandler(id, title, content, tagsString)
+  const { slug } = await updatePostHandler(
+    id,
+    title,
+    subtitle,
+    content,
+    tagsString
+  )
 
   if (!slug) {
     notFound()

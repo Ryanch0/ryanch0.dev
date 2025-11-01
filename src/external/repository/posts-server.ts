@@ -6,7 +6,7 @@ export const findAllPosts = async () => {
 
   const { data: posts, error } = await supabase
     .from('posts')
-    .select('id, title, preview, tags, slug, date')
+    .select('id, title, preview, tags, slug, date, subtitle')
     .order('date', { ascending: false })
 
   if (error) {
@@ -20,7 +20,7 @@ export const findPostsByTag = async (tag: string) => {
   const supabase = await createClientForServer()
   const { error, data } = await supabase
     .from('posts')
-    .select('id, title, preview, tags, slug, date')
+    .select('id, title, preview, tags, slug, date, subtitle')
     .order('date', { ascending: false })
     .contains('tags', [tag])
 
@@ -74,7 +74,7 @@ export const findPostById = async (id: string) => {
 
   const { data: post, error } = await supabase
     .from('posts')
-    .select('id, title, content, tags')
+    .select('id, title, content, tags, subtitle')
     .eq('id', id)
     .single()
 

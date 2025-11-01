@@ -44,6 +44,7 @@ const PostList = async ({ tag }: Props) => {
                       preview={post.preview}
                       slug={post.slug}
                       title={post.title}
+                      subtitle={post.subtitle}
                       date={post.date}
                     />
                   )

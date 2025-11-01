@@ -21,15 +21,13 @@ const Page = async ({ params }: Props) => {
   }
 
   return (
-    <>
-      <h2>UPDATE POST</h2>
-      <PostForm
-        action={updatePostAction.bind(null, id)}
-        title={prev.title}
-        content={prev.content}
-        tags={prev.tags}
-      />
-    </>
+    <PostForm
+      action={updatePostAction.bind(null, id)}
+      title={prev.title}
+      subtitle={prev.subtitle}
+      content={prev.content}
+      tags={prev.tags}
+    />
   )
 }
 

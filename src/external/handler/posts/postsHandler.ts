@@ -62,6 +62,7 @@ export const listAllTagsHandler = async () => {
 
 export const createPostHandler = async (
   title: string,
+  subtitle: string,
   content: string,
   tagsString: string
 ): Promise<PostSlug> => {
@@ -74,7 +75,16 @@ export const createPostHandler = async (
 
   const meta_description = generatePreview(content, 150)
 
-  const dto = { title, content, tags, slug, preview, date, meta_description }
+  const dto = {
+    title,
+    subtitle,
+    content,
+    tags,
+    slug,
+    preview,
+    date,
+    meta_description
+  }
 
   return await createPost(dto)
 }
@@ -82,6 +92,7 @@ export const createPostHandler = async (
 export const updatePostHandler = async (
   id: string,
   title: string,
+  subtitle: string,
   content: string,
   tagsString: string
 ): Promise<PostSlug> => {
@@ -92,7 +103,15 @@ export const updatePostHandler = async (
 
   const meta_description = generatePreview(content, 150)
 
-  const dto = { title, content, tags, preview, meta_description, last_modified }
+  const dto = {
+    title,
+    subtitle,
+    content,
+    tags,
+    preview,
+    meta_description,
+    last_modified
+  }
 
   return await updatePost(id, dto)
 }
