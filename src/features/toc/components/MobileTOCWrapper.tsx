@@ -14,14 +14,14 @@ type Props = {
 
 const MobileTOCWrapper = ({ title, children, isVisible = false }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
-  const titleRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
   const [titleWidth, setTitleWidth] = useState<number | null>(null)
 
   const getWidth = () => {
     if (isOpen) return 'min(300px, calc(100vw - 2rem))'
 
     if (titleWidth) {
-      return `min(${titleWidth}px, min(calc(100vw - 2rem), 300px))`
+      return `min(${titleWidth + 30}px, min(calc(100vw - 2rem), 300px))`
     }
 
     return 'auto'
@@ -54,12 +54,14 @@ const MobileTOCWrapper = ({ title, children, isVisible = false }: Props) => {
           className="flex w-full cursor-pointer items-center justify-between gap-3 px-3 py-1"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div
-            ref={titleRef}
-            className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden"
-          >
-            <CircularScrollProgress />
-            <h2 className="text-accent-light dark:text-accent-dark truncate text-lg">
+          <div className="flex items-center gap-2 overflow-hidden">
+            <div className="flex-shrink-0">
+              <CircularScrollProgress />
+            </div>
+            <h2
+              ref={titleRef}
+              className="text-accent-light dark:text-accent-dark truncate text-lg"
+            >
               {title}
             </h2>
           </div>
