@@ -5,6 +5,7 @@ import './globals.css'
 import { PropsWithChildren } from 'react'
 
 import Providers from '@/shared/components/Providers'
+import { ViewTransitions } from 'next-view-transitions'
 import { Inter, Newsreader, Source_Serif_4 } from 'next/font/google'
 import localFont from 'next/font/local'
 
@@ -46,15 +47,17 @@ const aritaBuri = localFont({
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      data-scroll-behavior="smooth"
-      className={`${sourceSerif.variable} ${inter.variable} ${newsreader.variable} ${aritaBuri.variable}`}
-    >
-      <body className="bg-background-light dark:bg-background-dark base-font-style pt-11 transition-colors duration-300">
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        data-scroll-behavior="smooth"
+        className={`${sourceSerif.variable} ${inter.variable} ${newsreader.variable} ${aritaBuri.variable}`}
+      >
+        <body className="bg-background-light dark:bg-background-dark base-font-style pt-11 transition-colors duration-300">
+          <Providers>{children}</Providers>
+        </body>
+      </html>
+    </ViewTransitions>
   )
 }

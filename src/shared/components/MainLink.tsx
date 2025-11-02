@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 import { PATH } from '@/constants/path'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 type Props = {
   className?: string

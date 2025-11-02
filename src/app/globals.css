@@ -202,6 +202,43 @@
   background-color: #1e1e1e !important;
 }
 
+.home-name {
+  animation: fade-slide-up 0.5s ease-out 0s backwards;
+}
+
+.home-description {
+  animation: fade-slide-up 0.5s ease-out 0.1s backwards;
+}
+
+.home-sub-description {
+  animation: fade-slide-up 0.5s ease-out 0.2s backwards;
+}
+
+.home-links {
+  animation: fade-slide-up 0.5s ease-out 0.3s backwards;
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-name,
+  .home-description,
+  .home-sub-description {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

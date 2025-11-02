@@ -22,7 +22,7 @@ const PostDetailWrapper = ({ title, children }: Props) => {
       </div>
       <aside
         className={
-          'fixed top-[30%] right-[0.5px] hidden w-64 min-[1400px]:right-[2%] min-[1400px]:w-70 xl:block 2xl:right-[10%] 2xl:w-80'
+          'fixed top-[30%] right-[0.5px] hidden w-64 min-[1400px]:right-[2%] min-[1400px]:w-70 xl:block 2xl:w-80'
         }
       >
         <TOC />

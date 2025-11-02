@@ -6,8 +6,12 @@ const Page = () => {
   return (
     <div className={'flex h-[calc(100vh-54px)] flex-col gap-4 pt-18'}>
       <div>
-        <h2 className={'title-style pb-6'}>Ryan Cho</h2>
-        <h4 className={'text-second-light dark:text-second-dark text-[1.3rem]'}>
+        <h2 className={'title-style home-name pb-6'}>Ryan Cho</h2>
+        <h4
+          className={
+            'home-description text-second-light dark:text-second-dark text-[1.3rem]'
+          }
+        >
           Building with semicolons and vision, I search for{' '}
           <strong className={'text-accent-light dark:text-accent-dark'}>
             alternatives
@@ -20,7 +24,7 @@ const Page = () => {
           .
         </h4>
 
-        <h4 className="text-second-light dark:text-second-dark pt-6 text-[1.3rem]">
+        <h4 className="home-sub-description text-second-light dark:text-second-dark pt-6 text-[1.3rem]">
           Currently work at{' '}
           <strong className={'text-accent-light dark:text-accent-dark'}>
             Naver Financial
@@ -28,7 +32,7 @@ const Page = () => {
           as a frontend developer, crafting seamless user experiences.
         </h4>
 
-        <ul className={'flex pt-2'}>
+        <ul className={'home-links flex pt-2'}>
           {ICON_LIST.map(({ href, icon, id }) => (
             <li key={id}>
               <LinkIcon href={href} icon={icon} />

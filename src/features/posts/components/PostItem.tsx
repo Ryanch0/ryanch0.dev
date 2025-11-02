@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import { PATH } from '@/constants/path'
 import groupHoverStyles from '@/features/posts/utils/groupHoverStyles'
 import { getDateParts } from '@/utils/date'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 type Props = {
   preview: string
