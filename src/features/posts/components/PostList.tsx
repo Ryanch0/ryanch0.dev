@@ -28,7 +28,7 @@ const PostList = async ({ tag }: Props) => {
             <section
               key={year}
               className={
-                'group/year border-border flex flex-col border-t duration-300 last:border-b last:pb-4 md:flex-row md:last:pb-0'
+                'group/year border-border flex flex-col border-t pb-8 duration-300 last:border-b md:flex-row md:pb-0'
               }
             >
               <div className={'my-6 md:my-6 md:w-[15%]'}>
