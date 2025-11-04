@@ -35,8 +35,9 @@ const Page = () => {
               or download my{' '}
               <MainLink
                 title={'resume ↗'}
-                href={`#`}
+                href={`/resume.pdf`}
                 className={'!text-base'}
+                target={'_blank'}
               />
             </p>
           </div>
