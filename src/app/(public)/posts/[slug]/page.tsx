@@ -8,6 +8,7 @@ import { findPostBySlug } from '@/external/repository/posts-server'
 import PostDeleteButton from '@/features/posts/components/PostDeleteButton'
 import PostDetail from '@/features/posts/components/PostDetail'
 import PostNavigation from '@/features/posts/components/PostNavigation'
+import TagItem from '@/features/tags/components/TagItem'
 import Footer from '@/shared/components/Footer'
 import MainLink from '@/shared/components/MainLink'
 import { Metadata } from 'next'
@@ -57,14 +58,7 @@ const Page = async ({ params }: Props) => {
         </div>
         <div className="mt-1 flex gap-2 text-sm">
           {data.tags?.map((tag) => {
-            return (
-              <span
-                key={tag}
-                className="bg-section-light dark:bg-section-dark text-second-light dark:text-second-dark rounded-sm px-2 py-0.5"
-              >
-                {tag}
-              </span>
-            )
+            return <TagItem tag={tag} key={tag} />
           })}
         </div>
         {isAuthorized && (

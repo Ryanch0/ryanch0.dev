@@ -1,9 +1,9 @@
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { PATH } from '@/constants/path'
 import { listAllTagsHandler } from '@/external/handler/posts/postsHandler'
-import TagItem from '@/features/tags/components/TagItem'
+import TagLinkItem from '@/features/tags/components/TagLinkItem'
 
-const TagList = async () => {
+const TagLinkList = async () => {
   const tags = await listAllTagsHandler()
 
   return (
@@ -12,11 +12,11 @@ const TagList = async () => {
         <ScrollArea className="pt-2 pb-4 whitespace-nowrap">
           <ul className="align-center flex gap-2">
             <li key="all">
-              <TagItem href={PATH.POSTS} tagName={'All'} defaultTag />
+              <TagLinkItem href={PATH.POSTS} tagName={'All'} defaultTag />
             </li>
             {tags.map((tag) => (
               <li key={tag}>
-                <TagItem href={`${PATH.POSTS}?tag=${tag}`} tagName={tag} />
+                <TagLinkItem href={`${PATH.POSTS}?tag=${tag}`} tagName={tag} />
               </li>
             ))}
           </ul>
@@ -27,4 +27,4 @@ const TagList = async () => {
   )
 }
 
-export default TagList
+export default TagLinkList

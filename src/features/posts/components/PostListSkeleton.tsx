@@ -7,7 +7,7 @@ const PostListSkeleton = () => {
         <section
           key={yearIndex}
           className={
-            'group/year border-border flex flex-col border-y duration-300 md:flex-row'
+            'group/year border-border flex flex-col border-t duration-300 md:flex-row'
           }
         >
           <div className={'my-6 md:my-6 md:w-[15%]'}>

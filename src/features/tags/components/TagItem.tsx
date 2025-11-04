@@ -1,36 +1,11 @@
-'use client'
-
-import { Button } from '@/components/ui/button'
-import { Link } from 'next-view-transitions'
-import { useSearchParams } from 'next/navigation'
-
-type Props = {
-  href: string
-  tagName: string
-  defaultTag?: boolean
-}
-const TagItem = ({ href, tagName, defaultTag }: Props) => {
-  const params = useSearchParams()
-  const tag = params.get('tag')
-  const isActive = tag === tagName
-  const getVariant = () => {
-    if (defaultTag && !!tag) return 'ghost'
-
-    if (defaultTag && !isActive) return 'outline'
-
-    if (isActive) return 'outline'
-
-    return 'ghost'
-  }
-
+const TagItem = ({ tag }: { tag: string }) => {
   return (
-    <Button
-      variant={getVariant()}
-      size="sm"
-      className="text-s h-8 cursor-pointer border-0"
+    <span
+      key={tag}
+      className="bg-section-light dark:bg-section-dark text-second-light dark:text-second-dark rounded-sm px-2 py-0.5"
     >
-      <Link href={href}>{tagName}</Link>
-    </Button>
+      {tag}
+    </span>
   )
 }
 

@@ -1,10 +1,11 @@
 import AboutContent from '@/features/about/components/AboutContent'
+import TagItem from '@/features/tags/components/TagItem'
 
 const Projects = () => {
   return (
     <AboutContent key={'projects'} title={'Projects & Experience'}>
       <div className={'pb-2'}>
-        <h2 className={'accent-font-style font-medium'}>
+        <h2 className={'accent-font-style text-lg font-medium'}>
           Zium Knowledge Service
         </h2>
         <p className={'text-second-light/70 dark:text-underline-dark text-sm'}>
@@ -18,6 +19,18 @@ const Projects = () => {
             Naver Financial - Employee Welfare Platform (Frontend Lead){' '}
           </p>
           <span className={'pt-1 text-xs'}>Jan 2025 – Present</span>
+          <div className="my-1 flex gap-1 text-xs">
+            {[
+              'React',
+              'TypeScript',
+              'Sass',
+              'Vite',
+              'React-Query',
+              'Storybook'
+            ].map((tag) => (
+              <TagItem tag={tag} key={tag} />
+            ))}
+          </div>
           <ul className={'mt-1 flex max-w-[85%] flex-col gap-1 space-y-1'}>
             <li className="bullet">
               Led frontend architecture design and implementation using React
@@ -62,6 +75,13 @@ const Projects = () => {
             Project)
           </p>
           <span className={'pt-1 text-xs'}>Oct 2024 – Jan 2025</span>
+          <div className="my-1 flex gap-1 text-xs">
+            {['React', 'TypeScript', 'Vite', 'Ant Design', 'Sass', 'Jotai'].map(
+              (tag) => (
+                <TagItem tag={tag} key={tag} />
+              )
+            )}
+          </div>
           <ul className={'mt-1 flex max-w-[85%] flex-col gap-1 space-y-1'}>
             <li className="bullet">
               Built the customer inquiry page and customized the Ant Design
@@ -80,6 +100,11 @@ const Projects = () => {
             Sub Project)
           </p>
           <span className={'pt-1 text-xs'}>Apr 2024 – Jun 2025</span>
+          <div className="my-1 flex gap-1 text-xs">
+            {['React', 'TypeScript', 'Vite', 'Sass', 'Jotai'].map((tag) => (
+              <TagItem tag={tag} key={tag} />
+            ))}
+          </div>
           <ul className={'mt-1 flex max-w-[85%] flex-col gap-1 space-y-1'}>
             <li className="bullet">
               Contributed to two internal admin dashboards using React and Jotai
@@ -94,7 +119,7 @@ const Projects = () => {
 
         <div className={'my-2'}>
           <div className={'pt-2 pb-4'}>
-            <h2 className={'accent-font-style !text-base'}>Personal Project</h2>
+            <h2 className={'accent-font-style !text-lg'}>Personal Project</h2>
             <p
               className={
                 'text-second-light/70 dark:text-underline-dark text-sm'
@@ -107,6 +132,13 @@ const Projects = () => {
             This Website - ryanch0.dev
           </p>
           <span className={'pt-1 text-xs'}>Oct 2025 – Nov 2025</span>
+          <div className="my-1 flex gap-1 text-xs">
+            {['Next.js', 'TypeScript', 'Tailwind', 'Supabase', 'MDX'].map(
+              (tag) => (
+                <TagItem tag={tag} key={tag} />
+              )
+            )}
+          </div>
           <ul className={'mt-1 flex max-w-[85%] flex-col gap-1 space-y-1'}>
             <li className="bullet">
               Built a full-stack personal blog using Next.js (^15 App Router)

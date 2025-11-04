@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 
 import PostList from '@/features/posts/components/PostList'
 import PostListSkeleton from '@/features/posts/components/PostListSkeleton'
-import TagList from '@/features/tags/components/TagList'
+import TagLinkList from '@/features/tags/components/TagLinkList'
 import TagListSkeleton from '@/features/tags/components/TagListSkeleton'
 import Footer from '@/shared/components/Footer'
 import MainLink from '@/shared/components/MainLink'
@@ -25,7 +25,7 @@ const Page = async ({ searchParams }: Props) => {
         </div>
         <main className={'layout-content'}>
           <Suspense fallback={<TagListSkeleton />}>
-            <TagList />
+            <TagLinkList />
           </Suspense>
           <Suspense fallback={<PostListSkeleton />}>
             <PostList tag={tagName} />

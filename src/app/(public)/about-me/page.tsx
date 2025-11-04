@@ -1,7 +1,7 @@
 import { EXTERNAL_URL } from '@/constants/path'
-import AboutContent from '@/features/about/components/AboutContent'
 import Education from '@/features/about/components/Education'
 import Projects from '@/features/about/components/Projects'
+import Skills from '@/features/about/components/Skills'
 import Footer from '@/shared/components/Footer'
 import MainLink from '@/shared/components/MainLink'
 
@@ -15,13 +15,13 @@ const Page = () => {
           <span>by</span> <MainLink />
         </div>
         <main className={'layout-content'}>
-          <p className={'italic'}>
+          <p className={'home-name italic'}>
             Relocating to Vancouver, Canada on March 18, 2026, to{' '}
             <strong className={'accent-font-style'}>pursue</strong> new career
             opportunities as a{' '}
             <strong className={'accent-font-style'}>Frontend Developer</strong>.
           </p>
-          <div className={'pt-4 pb-8'}>
+          <div className={'home-description pt-2 pb-6'}>
             <p>
               Feel free to contact me at
               <span>
@@ -37,15 +37,11 @@ const Page = () => {
                 href={`#`}
                 className={'!text-base'}
               />
-              .
             </p>
           </div>
           <div className={'pt-4'}>
             <Projects />
-            <AboutContent key={'skills'} title={'Skills'}>
-              Skills
-            </AboutContent>
-
+            <Skills />
             <Education />
           </div>
         </main>
