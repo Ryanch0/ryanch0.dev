@@ -4,15 +4,17 @@ import './globals.css'
 
 import { PropsWithChildren } from 'react'
 
+import { createMetadata } from '@/lib/metadata'
 import Providers from '@/shared/components/Providers'
 import { ViewTransitions } from 'next-view-transitions'
 import { Inter, Newsreader, Source_Serif_4 } from 'next/font/google'
 import localFont from 'next/font/local'
 
-export const metadata: Metadata = {
-  title: 'Ryan Cho',
-  description: 'Frontend engineer Ryan Cho’s personal website.'
-}
+export const metadata: Metadata = createMetadata({
+  ogTitle: 'ryanch0.dev',
+  description: 'Crafting elegant solutions from obstacles',
+  ogDescription: 'Where obstacles become elegant solutions'
+})
 
 const sourceSerif = Source_Serif_4({
   subsets: ['latin'],

@@ -9,6 +9,7 @@ import PostDeleteButton from '@/features/posts/components/PostDeleteButton'
 import PostDetail from '@/features/posts/components/PostDetail'
 import PostNavigation from '@/features/posts/components/PostNavigation'
 import TagItem from '@/features/tags/components/TagItem'
+import { createMetadata } from '@/lib/metadata'
 import Footer from '@/shared/components/Footer'
 import MainLink from '@/shared/components/MainLink'
 import { Metadata } from 'next'
@@ -28,13 +29,14 @@ export const generateMetadata = async ({
   if (!slug || typeof slug !== 'string') {
     notFound()
   }
-
   const data = await findPostBySlug(slug)
 
-  return {
+  return createMetadata({
     title: data.title,
-    description: data?.meta_description
-  }
+    description: data.subtitle,
+    ogDescription: data.subtitle,
+    url: `/posts/${slug}`
+  })
 }
 
 const Page = async ({ params }: Props) => {
