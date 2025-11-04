@@ -1,6 +1,6 @@
 import { ICON_LIST } from '@/constants/iconList'
 import Footer from '@/shared/components/Footer'
-import LinkIcon from '@/shared/components/Header/components/LinkIcon'
+import LinkIcon from '@/shared/components/LinkIcon'
 
 const Page = () => {
   return (

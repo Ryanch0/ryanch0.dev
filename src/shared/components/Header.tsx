@@ -4,8 +4,8 @@ import { FiPlus } from 'react-icons/fi'
 import { PATH } from '@/constants/path'
 import { authCheckHandler } from '@/external/handler/auth/authHandler'
 import SearchModalTrigger from '@/features/search/components/SearchModalTrigger'
-import HeaderActiveLink from '@/shared/components/Header/components/HeaderActiveLink'
-import ThemeToggle from '@/shared/components/Header/components/ThemeToggle'
+import HeaderActiveLink from '@/shared/components/HeaderActiveLink'
+import ThemeToggle from '@/shared/components/ThemeToggle'
 import { Link } from 'next-view-transitions'
 
 const Header = async () => {
