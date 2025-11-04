@@ -9,8 +9,8 @@ export const PATH = {
 export const EXTERNAL_URL = {
   GITHUB: 'https://github.com/Ryanch0',
   EMAIL: 'ryan@ryanch0.dev',
-  LINKEDIN: 'https://www.linkedin.com/#',
+  LINKEDIN: 'https://www.linkedin.com/in/ryan-cho-b617b7395',
   INSTAGRAM: 'https://www.instagram.com/sksQnsks',
-  TWITTER: '#',
+  TWITTER: 'https://x.com/ryanch0_',
   SOURCE_CODE: 'https://github.com/Ryanch0/ryancho-web'
 }
