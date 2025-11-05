@@ -41,6 +41,16 @@ const aritaBuri = localFont({
       path: '../fonts/AritaSansLTN-Medium.ttf',
       weight: '500',
       style: 'normal'
+    },
+    {
+      path: '../fonts/AritaSansLTNMedium.woff',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../fonts/AritaSansLTNMedium.woff2',
+      weight: '500',
+      style: 'normal'
     }
   ],
   variable: '--font-arita',

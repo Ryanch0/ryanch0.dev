@@ -9,7 +9,7 @@ const Page = () => {
         <h2 className={'title-style home-name pb-6'}>Ryan Cho</h2>
         <h4
           className={
-            'home-description text-second-light dark:text-second-dark text-[1.3rem]'
+            'home-description text-second-light dark:text-second-dark text-xl'
           }
         >
           Building with semicolons and vision, I search for{' '}
@@ -19,7 +19,7 @@ const Page = () => {
           <strong className={'accent-font-style'}>elegant solutions</strong>.
         </h4>
 
-        <h4 className="home-sub-description text-second-light dark:text-second-dark pt-6 text-[1.3rem]">
+        <h4 className="home-sub-description text-second-light dark:text-second-dark pt-6 text-xl">
           Currently work at{' '}
           <strong className={'accent-font-style'}>Naver Financial</strong> as a
           frontend developer, crafting seamless user experiences.
