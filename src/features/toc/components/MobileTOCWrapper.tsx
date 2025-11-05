@@ -81,7 +81,7 @@ const MobileTOCWrapper = ({ title, children, isVisible = false }: Props) => {
             pointerEvents: isOpen ? 'auto' : 'none'
           }}
         >
-          <div className="max-h-[calc(60vh-5rem)] overflow-y-auto px-4 pb-4">
+          <div className="max-h-[calc(60dvh-5rem)] overflow-y-auto px-4 pb-4">
             {children}
           </div>
         </motion.div>
