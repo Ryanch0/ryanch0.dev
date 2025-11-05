@@ -71,19 +71,16 @@ const SearchModal = ({ isOpen, onClose }: Props) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onCloseModal}>
-      <DialogContent className="w-[640px] gap-0 border-0 p-0 shadow-lg">
+      <DialogContent className="top-[35%] w-[90%] max-w-[640px] gap-0 border-0 p-0 shadow-lg md:top-[50%]">
         <DialogTitle className="sr-only">Search Posts</DialogTitle>
         <DialogDescription className="sr-only">Search Posts</DialogDescription>
-        <Command
-          shouldFilter={false}
-          className="h-[350px] rounded-lg p-2 md:h-[450px]"
-        >
+        <Command shouldFilter={false} className="min-h-[300px] rounded-lg p-2">
           <CommandInput
             value={search}
             onValueChange={onChange}
             placeholder="Search posts..."
           />
-          <CommandList className="max-h-[400px]">{renderResults()}</CommandList>
+          <CommandList className="max-h-[350px]">{renderResults()}</CommandList>
         </Command>
       </DialogContent>
     </Dialog>
