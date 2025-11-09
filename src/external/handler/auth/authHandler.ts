@@ -6,7 +6,11 @@ import { headers } from 'next/headers'
 const MAX_ATTEMPTS = 5
 const WINDOW_MS = 30 * 60 * 1000
 
-export const signInHandler = async (email: string, password: string) => {
+export const signInHandler = async (
+  email: string,
+  password: string,
+  captchaToken: string
+) => {
   const headersList = await headers()
   const ip = headersList.get('x-client-ip') || 'unknown'
 
@@ -49,7 +53,10 @@ export const signInHandler = async (email: string, password: string) => {
 
   const { error: authError } = await supabase.auth.signInWithPassword({
     email,
-    password
+    password,
+    options: {
+      captchaToken
+    }
   })
 
   if (authError) {

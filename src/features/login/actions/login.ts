@@ -11,8 +11,9 @@ export const signInAction = async (
 ) => {
   const email = formData.get('email') as string
   const password = formData.get('password') as string
+  const captchaToken = formData.get('captchaToken') as string
 
-  const result = await signInHandler(email, password)
+  const result = await signInHandler(email, password, captchaToken)
 
   if (result?.error) {
     return { error: result.error }
