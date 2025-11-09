@@ -1,15 +1,27 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import { FaUserShield } from 'react-icons/fa'
 import { FiPlus } from 'react-icons/fi'
 
 import { PATH } from '@/constants/path'
-import { authCheckHandler } from '@/external/handler/auth/authHandler'
 import SearchModalTrigger from '@/features/search/components/SearchModalTrigger'
+import { createClientForClient } from '@/lib/supabase/client'
 import HeaderActiveLink from '@/shared/components/HeaderActiveLink'
 import ThemeToggle from '@/shared/components/ThemeToggle'
 import { Link } from 'next-view-transitions'
 
-const Header = async () => {
-  const { isAuthorized } = await authCheckHandler()
+const Header = () => {
+  const [isAuthorized, setIsAuthorized] = useState(false)
+
+  useEffect(() => {
+    const supabase = createClientForClient()
+
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setIsAuthorized(!!user)
+    })
+  }, [])
+
   const authLink = isAuthorized ? (
     <Link href={PATH.WRITE}>
       <FiPlus
