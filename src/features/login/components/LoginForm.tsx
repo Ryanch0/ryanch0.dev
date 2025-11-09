@@ -95,7 +95,9 @@ const LoginForm = ({ action }: Props) => {
 
       <div
         className={`mt-1 mb-2 ${
-          showCaptcha ? 'mt-1 max-h-[100px] opacity-100' : 'max-h-0 opacity-0'
+          showCaptcha
+            ? 'visible mt-1 max-h-[100px] opacity-100'
+            : 'invisible max-h-0 opacity-0'
         } transition-all duration-300 ease-in-out`}
       >
         <HCaptcha
