@@ -13,22 +13,17 @@ import { createMetadata } from '@/lib/metadata'
 import Footer from '@/shared/components/Footer'
 import MainLink from '@/shared/components/MainLink'
 import { Metadata } from 'next'
-import { NextParsedUrlQuery } from 'next/dist/server/request-meta'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 
 type Props = {
-  params: Promise<NextParsedUrlQuery>
+  params: { slug: string }
 }
 
 export const generateMetadata = async ({
   params
 }: Props): Promise<Metadata> => {
-  const { slug } = await params
+  const { slug } = params
 
-  if (!slug || typeof slug !== 'string') {
-    notFound()
-  }
   const data = await findPostBySlug(slug)
 
   return createMetadata({
@@ -40,11 +35,7 @@ export const generateMetadata = async ({
 }
 
 const Page = async ({ params }: Props) => {
-  const { slug } = await params
-
-  if (!slug || typeof slug !== 'string') {
-    notFound()
-  }
+  const { slug } = params
 
   const { isAuthorized } = await authCheckHandler()
   const data = await findPostBySlugHandler(slug)

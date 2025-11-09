@@ -9,10 +9,10 @@ import MainLink from '@/shared/components/MainLink'
 import { SearchParams } from 'next/dist/server/request/search-params'
 
 type Props = {
-  searchParams: Promise<SearchParams>
+  searchParams: SearchParams
 }
-const Page = async ({ searchParams }: Props) => {
-  const { tag } = await searchParams
+const Page = ({ searchParams }: Props) => {
+  const { tag } = searchParams
   const tagName = typeof tag === 'string' ? tag : undefined
 
   return (
