@@ -38,8 +38,8 @@ const Projects = () => {
             </li>
             <li className="bullet">
               Designed a custom error handling framework between BFF and
-              frontend, enabling contextual, modal, and page-level recovery
-              aligned with UX requirements.
+              frontend, enabling contextual, modal, and page-level error
+              recovery aligned with UX requirements.
             </li>
             <li className="bullet">
               Improved application performance through lazy loading, request
@@ -69,7 +69,7 @@ const Projects = () => {
           </ul>
         </div>
 
-        <div className={'my-2'}>
+        <div className={'my-4'}>
           <p className={'accent-font-style font-medium'}>
             Naver Financial - Customer Inquiry Portal (Frontend Development, Sub
             Project)

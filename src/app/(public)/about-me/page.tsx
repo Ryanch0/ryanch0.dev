@@ -18,7 +18,7 @@ const Page = () => {
         <main className={'layout-content'}>
           <p className={'home-name italic'}>
             Relocating to Vancouver, BC on March 18, 2026, to{' '}
-            <strong className={'accent-font-style'}>pursue</strong> new career
+            <strong className={'accent-font-style'}>pursue</strong> new
             opportunities as a{' '}
             <strong className={'accent-font-style'}>Frontend Developer</strong>.
           </p>
