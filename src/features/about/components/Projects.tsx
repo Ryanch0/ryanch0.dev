@@ -160,6 +160,11 @@ const Projects = () => {
               Utilized Next.js Middleware to handle protected routes and enforce
               authentication on server side.
             </li>
+            <li className="bullet">
+              Enhanced login security by integrating CAPTCHA to block automated
+              bot attacks and implementing Redis-backed IP rate limiting to
+              mitigate brute-force attempts.
+            </li>
           </ul>
         </div>
       </article>
