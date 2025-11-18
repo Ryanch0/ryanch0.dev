@@ -1,5 +1,6 @@
 import { FaGithub, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
+import { SiVelog } from 'react-icons/si'
 
 import { EXTERNAL_URL } from '@/constants/path'
 
@@ -14,6 +15,11 @@ export const ICON_LIST = [
     id: 'linkedin',
     icon: FaLinkedinIn,
     href: EXTERNAL_URL.LINKEDIN
+  },
+  {
+    id: 'velog',
+    icon: SiVelog,
+    href: EXTERNAL_URL.VELOG
   },
   {
     id: 'instagram',
