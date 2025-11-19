@@ -79,7 +79,7 @@ export default async function RootLayout({
         data-scroll-behavior="smooth"
         className={`${sourceSerif.variable} ${inter.variable} ${aritaBuri.variable}`}
       >
-        <body className="bg-background-light dark:bg-background-dark base-font-style pt-11 transition-colors duration-300 ease-in-out">
+        <body className="bg-background-light dark:bg-background-dark base-font-style pt-11">
           <NextIntlClientProvider>
             <Providers>{children}</Providers>
           </NextIntlClientProvider>

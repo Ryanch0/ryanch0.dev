@@ -9,7 +9,7 @@ const TagLinkList = async () => {
   return (
     <div
       className={
-        'bg-header-light dark:bg-header-dark sticky top-13 z-40 -mx-4 transition-colors duration-300 ease-in-out md:-mx-6'
+        'bg-header-light dark:bg-header-dark sticky top-13 z-40 -mx-4 md:-mx-6'
       }
     >
       <nav className={'mx-4 md:mx-6'}>
