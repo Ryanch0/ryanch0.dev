@@ -9,8 +9,8 @@ import SearchModalTrigger from '@/features/search/components/SearchModalTrigger'
 import { createClientForClient } from '@/lib/supabase/client'
 import HeaderActiveLink from '@/shared/components/HeaderActiveLink'
 import LangToggle from '@/shared/components/LangToggle'
+import LocaleTransitionLink from '@/shared/components/LocaleTransitionLink'
 import ThemeToggle from '@/shared/components/ThemeToggle'
-import { Link } from 'next-view-transitions'
 
 const Header = () => {
   const [isAuthorized, setIsAuthorized] = useState(false)
@@ -24,31 +24,33 @@ const Header = () => {
   }, [])
 
   const authLink = isAuthorized ? (
-    <Link href={PATH.WRITE}>
+    <LocaleTransitionLink href={PATH.WRITE}>
       <FiPlus
         size={38}
         className={
           'cursor-pointer p-1.5 transition-transform duration-400 ease-out hover:scale-110'
         }
       />
-    </Link>
+    </LocaleTransitionLink>
   ) : (
-    <Link href={PATH.LOGIN}>
+    <LocaleTransitionLink href={PATH.LOGIN}>
       <FaUserShield
         size={38}
         className={
           'cursor-pointer p-1.5 transition-transform duration-400 ease-out hover:scale-110'
         }
       />
-    </Link>
+    </LocaleTransitionLink>
   )
 
   return (
-    <header className="bg-header-light dark:bg-header-dark fixed top-[env(safe-area-inset-top)] left-0 z-50 w-full transition-colors duration-300 ease-in-out">
+    <header className="bg-header-light dark:bg-header-dark fixed top-[env(safe-area-inset-top)] left-0 z-50 w-full">
       <div className="mx-auto h-13 px-4 md:max-w-3xl md:px-6">
         <nav className="py-2">
           <div className="flex items-center gap-3">
-            <HeaderActiveLink href={PATH.ABOUT_ME}>About</HeaderActiveLink>
+            <HeaderActiveLink href={PATH.ABOUT_ME} className={'pr-1'}>
+              About
+            </HeaderActiveLink>
             <HeaderActiveLink className={'mr-auto'} href={PATH.POSTS}>
               Blog
             </HeaderActiveLink>

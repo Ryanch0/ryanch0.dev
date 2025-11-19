@@ -1,21 +1,9 @@
 'use client'
 
-import { MouseEvent } from 'react'
-
 import { EXTERNAL_URL } from '@/constants/path'
 import MainLink from '@/shared/components/MainLink'
-import { usePathname } from 'next/navigation'
 
 const Footer = () => {
-  const pathname = usePathname()
-
-  const onClickMainLink = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (pathname !== '/') return
-
-    e.preventDefault()
-    window.location.reload()
-  }
-
   return (
     <footer
       className={
@@ -24,7 +12,7 @@ const Footer = () => {
     >
       <div>
         Copyright ©
-        <MainLink onClick={onClickMainLink} title={<h4>Ryan Cho</h4>} />
+        <MainLink title={<h4>Ryan Cho</h4>} />
       </div>
 
       <MainLink
