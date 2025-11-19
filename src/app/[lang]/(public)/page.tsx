@@ -1,15 +1,18 @@
 import { ICON_LIST } from '@/constants/iconList'
 import Footer from '@/shared/components/Footer'
 import LinkIcon from '@/shared/components/LinkIcon'
+import { getTranslations } from 'next-intl/server'
 
-const Page = () => {
+const Page = async () => {
+  const t = await getTranslations('HomePage')
+
   return (
     <div className={'flex h-[calc(100dvh-54px)] flex-col gap-4 pt-6 sm:pt-18'}>
       <div>
-        <h2 className={'title-style home-name pb-6'}>Ryan Cho</h2>
+        <h2 className={'title-style home-name pb-6'}>{t('title')}</h2>
         <h4
           className={
-            'home-description text-second-light dark:text-second-dark text-xl'
+            'home-description text-second-light dark:text-second-dark text-lg'
           }
         >
           Building with semicolons and vision, I search for{' '}
@@ -19,7 +22,7 @@ const Page = () => {
           <strong className={'accent-font-style'}>elegant solutions</strong>.
         </h4>
 
-        <h4 className="home-sub-description text-second-light dark:text-second-dark pt-6 text-xl">
+        <h4 className="home-sub-description text-second-light dark:text-second-dark pt-6 text-lg">
           Currently work at{' '}
           <strong className={'accent-font-style'}>Naver Financial</strong> as a
           frontend developer, crafting seamless user experiences.

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 
-import './globals.css'
+import '../globals.css'
 
 import { PropsWithChildren } from 'react'
 
 import { createMetadata } from '@/lib/metadata'
 import Providers from '@/shared/components/Providers'
+import { NextIntlClientProvider } from 'next-intl'
 import { ViewTransitions } from 'next-view-transitions'
-import { Inter, Newsreader, Source_Serif_4 } from 'next/font/google'
+import { Inter, Source_Serif_4 } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const metadata: Metadata = createMetadata({
@@ -28,28 +29,31 @@ const inter = Inter({
   variable: '--font-inter'
 })
 
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-newsreader'
-})
-
 const aritaBuri = localFont({
   src: [
     {
-      path: '../fonts/AritaSansLTN-Medium.ttf',
+      path: '../../fonts/AritaBuriKR-HairLine.woff2',
+      weight: '100',
+      style: 'normal'
+    },
+    {
+      path: '../../fonts/AritaBuriKR-Light.woff2',
+      weight: '300',
+      style: 'normal'
+    },
+    {
+      path: '../../fonts/AritaBuriKR-Medium.woff2',
       weight: '500',
       style: 'normal'
     },
     {
-      path: '../fonts/AritaSansLTNMedium.woff',
-      weight: '500',
+      path: '../../fonts/AritaBuriKR-SemiBold.woff2',
+      weight: '600',
       style: 'normal'
     },
     {
-      path: '../fonts/AritaSansLTNMedium.woff2',
-      weight: '500',
+      path: '../../fonts/AritaBuriKR-Bold.woff2',
+      weight: '700',
       style: 'normal'
     }
   ],
@@ -57,17 +61,28 @@ const aritaBuri = localFont({
   display: 'swap'
 })
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'ko' }]
+}
+
+export default async function RootLayout({
+  children,
+  params
+}: PropsWithChildren<{ params: Promise<{ lang: string }> }>) {
+  const { lang } = await params
+
   return (
     <ViewTransitions>
       <html
-        lang="en"
+        lang={lang}
         suppressHydrationWarning
         data-scroll-behavior="smooth"
-        className={`${sourceSerif.variable} ${inter.variable} ${newsreader.variable} ${aritaBuri.variable}`}
+        className={`${sourceSerif.variable} ${inter.variable} ${aritaBuri.variable}`}
       >
         <body className="bg-background-light dark:bg-background-dark base-font-style pt-11 transition-colors duration-300 ease-in-out">
-          <Providers>{children}</Providers>
+          <NextIntlClientProvider>
+            <Providers>{children}</Providers>
+          </NextIntlClientProvider>
         </body>
       </html>
     </ViewTransitions>
