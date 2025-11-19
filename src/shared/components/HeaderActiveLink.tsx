@@ -20,7 +20,7 @@ const HeaderActiveLink = ({ children, href, className }: Props) => {
   return (
     <Link
       href={href}
-      className={`hover:opacity-70 ${activeClassName} ${className}`}
+      className={`font-family-arita hover:opacity-70 ${activeClassName} ${className}`}
     >
       {children}
     </Link>

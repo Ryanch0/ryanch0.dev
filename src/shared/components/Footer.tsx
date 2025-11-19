@@ -24,15 +24,12 @@ const Footer = () => {
     >
       <div>
         Copyright ©
-        <MainLink
-          onClick={onClickMainLink}
-          title={<p className={'font-family-serif !text-base'}>Ryan Cho</p>}
-        />
+        <MainLink onClick={onClickMainLink} title={<h4>Ryan Cho</h4>} />
       </div>
 
       <MainLink
         className={'italic'}
-        title={<p className={'font-family-serif !text-base'}>Source Code</p>}
+        title={<h4>Source Code</h4>}
         href={EXTERNAL_URL.SOURCE_CODE}
         rel={'noopener noreferrer'}
         target={'_blank'}

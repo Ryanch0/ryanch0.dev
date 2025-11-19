@@ -29,14 +29,14 @@ const PostItem = ({ title, slug, date, subtitle }: Props) => {
     >
       <Link href={`${PATH.POSTS}/${slug}`} className={'rounded-lg'}>
         <div className={`w-full ${groupHoverStyles.post}`}>
-          <div className={'flex items-center justify-between'}>
+          <div className={'flex items-center justify-between gap-1'}>
             <div className={'min-w-0 flex-1 truncate'}>
-              <h4 className={'mt-1 truncate text-lg'}>
+              <h4 className={'mt-1 truncate text-base'}>
                 <span>{title}</span>
               </h4>
               <p
                 className={
-                  'truncate text-[0.94rem] text-[#999999] dark:text-[#808080]'
+                  'truncate text-sm text-[#999999] dark:text-[#808080]'
                 }
               >
                 {subtitle}
@@ -44,14 +44,13 @@ const PostItem = ({ title, slug, date, subtitle }: Props) => {
             </div>
             <time
               className={
-                "ml-4' text-[0.94rem] whitespace-nowrap text-[#999999] dark:text-[#808080]"
+                "ml-4' text-sm whitespace-nowrap text-[#999999] dark:text-[#808080]"
               }
             >{`${month}. ${day}.`}</time>
           </div>
         </div>
       </Link>
     </motion.li>
-    // </motion.li>
   )
 }
 
