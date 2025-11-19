@@ -7,6 +7,7 @@ import LoginCaptcha from '@/features/login/components/LoginCaptcha'
 import useLoginFormUseCase from '@/features/login/hooks/useLoginFormUseCase'
 import { signInFormState } from '@/features/login/types/login'
 import { AlertCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export type LoginFormState = {
   error?: signInFormState
@@ -30,6 +31,7 @@ const LoginForm = ({ action }: LoginFormProps) => {
     showCaptcha,
     error
   } = useLoginFormUseCase({ action })
+  const t = useTranslations('LoginPage')
 
   return (
     <form action={formAction} className="mx-auto mt-4 w-full max-w-[600px]">
@@ -44,8 +46,8 @@ const LoginForm = ({ action }: LoginFormProps) => {
         id={'email'}
         ref={emailRef}
         type={'email'}
-        placeholder={'email'}
-        label={'Email'}
+        placeholder={t('emailPlaceholder')}
+        label={t('email')}
         name={'email'}
         autoComplete={'email'}
         error={error?.email}
@@ -55,8 +57,8 @@ const LoginForm = ({ action }: LoginFormProps) => {
         id={'password'}
         ref={passwordRef}
         type={'password'}
-        placeholder={'password'}
-        label={'Password'}
+        placeholder={t('passwordPlaceholder')}
+        label={t('password')}
         name={'password'}
         autoComplete={'current-password'}
         error={error?.password}
@@ -73,7 +75,7 @@ const LoginForm = ({ action }: LoginFormProps) => {
         className="bg-base-light dark:bg-base-dark text-accent-dark dark:text-accent-light hover:bg-base-light/70 dark:hover:bg-base-dark/70 w-full cursor-pointer"
         disabled={isPending}
       >
-        {isPending ? 'Logging in...' : 'Login'}
+        {isPending ? t('pending') : t('login')}
       </Button>
     </form>
   )

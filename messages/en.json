@@ -1,0 +1,36 @@
+{
+  "MainPage": {
+    "title": "Ryan Cho",
+    "description1": "Exploring to refine flow and structure, finding new <strong>alternatives</strong> even within complex problems. Distilling complexity into clarity to connect challenges to more definitive <strong>solutions</strong>.",
+    "description2": "Currently work at <strong>Naver Financial</strong> as a frontend developer, crafting seamless user experiences."
+  },
+  "AboutPage": {
+    "title": "About",
+    "description": "Traces, and the flow toward what's next.",
+    "info": "Relocating to Vancouver, BC on March 18, 2026, to <strong>pursue</strong> new opportunities as a <strong>Frontend Developer</strong>.",
+    "contact": {
+      "text1": "Feel free to contact me at ",
+      "text2": "or download my ",
+      "text3": "",
+      "resumeTitle": "resume"
+    }
+  },
+  "BlogPage": {
+    "title": "Blog Archive",
+    "description": "A space for storing insights"
+  },
+  "LoginPage": {
+    "title": "Admin Login",
+    "description": "Authorized access only",
+    "email": "Email",
+    "emailPlaceholder": "email",
+    "password": "Password",
+    "passwordPlaceholder": "password",
+    "login": "Login",
+    "pending": "Logging in..."
+  },
+  "Components": {
+    "name": "Ryan Cho",
+    "sourceCode": "Source Code"
+  }
+}

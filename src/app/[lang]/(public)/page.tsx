@@ -4,7 +4,7 @@ import LinkIcon from '@/shared/components/LinkIcon'
 import { getTranslations } from 'next-intl/server'
 
 const Page = async () => {
-  const t = await getTranslations('HomePage')
+  const t = await getTranslations('MainPage')
 
   return (
     <div className={'flex h-[calc(100dvh-54px)] flex-col gap-4 pt-6 sm:pt-18'}>
@@ -15,17 +15,19 @@ const Page = async () => {
             'home-description text-second-light dark:text-second-dark text-lg'
           }
         >
-          Building with semicolons and vision, I search for{' '}
-          <strong className={'accent-font-style'}>alternatives</strong> when
-          others see dead ends. Structure and spontaneity converge here—where
-          exploration transforms obstacles into{' '}
-          <strong className={'accent-font-style'}>elegant solutions</strong>.
+          {t.rich('description1', {
+            strong: (chunk) => (
+              <strong className="accent-font-style">{chunk}</strong>
+            )
+          })}
         </h4>
 
         <h4 className="home-sub-description text-second-light dark:text-second-dark pt-6 text-lg">
-          Currently work at{' '}
-          <strong className={'accent-font-style'}>Naver Financial</strong> as a
-          frontend developer, crafting seamless user experiences.
+          {t.rich('description2', {
+            strong: (chunk) => (
+              <strong className="accent-font-style">{chunk}</strong>
+            )
+          })}
         </h4>
 
         <ul className={'home-links flex pt-2'}>

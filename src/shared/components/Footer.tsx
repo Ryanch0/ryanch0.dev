@@ -2,8 +2,11 @@
 
 import { EXTERNAL_URL } from '@/constants/path'
 import MainLink from '@/shared/components/MainLink'
+import { useTranslations } from 'next-intl'
 
 const Footer = () => {
+  const t = useTranslations('Components')
+
   return (
     <footer
       className={
@@ -12,12 +15,12 @@ const Footer = () => {
     >
       <div>
         Copyright ©
-        <MainLink title={<h4>Ryan Cho</h4>} />
+        <MainLink />
       </div>
 
       <MainLink
         className={'italic'}
-        title={<h4>Source Code</h4>}
+        title={<h4>{t('sourceCode')}</h4>}
         href={EXTERNAL_URL.SOURCE_CODE}
         rel={'noopener noreferrer'}
         target={'_blank'}

@@ -1,7 +1,10 @@
+'use client'
+
 import { ReactNode } from 'react'
 
 import { PATH } from '@/constants/path'
 import LocaleTransitionLink from '@/shared/components/LocaleTransitionLink'
+import { useTranslations } from 'next-intl'
 
 type Props = {
   className?: string
@@ -13,10 +16,12 @@ type Props = {
 const MainLink = ({
   className,
   href = PATH.MAIN,
-  title = <h4>Ryan Cho</h4>,
+  title,
   target,
   rel
 }: Props) => {
+  const t = useTranslations('Components')
+
   return (
     <LocaleTransitionLink
       className={`accent-font-style decoration-underline-light dark:decoration-underline-dark hover:bg-section-light dark:hover:bg-section-dark inline-block rounded-sm px-1 text-base underline decoration-1 underline-offset-4 transition-colors ease-in-out hover:no-underline ${className}`}
@@ -24,7 +29,7 @@ const MainLink = ({
       rel={rel}
       target={target}
     >
-      {title}
+      {title || <h4>{t('name')}</h4>}
     </LocaleTransitionLink>
   )
 }

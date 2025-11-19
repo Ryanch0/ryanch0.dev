@@ -3,6 +3,7 @@
 import { Dispatch, SetStateAction } from 'react'
 
 import HCaptcha from '@hcaptcha/react-hcaptcha'
+import { useLocale } from 'next-intl'
 import { useTheme } from 'next-themes'
 
 type Props = {
@@ -12,6 +13,7 @@ type Props = {
 }
 const LoginCaptcha = ({ sitekey, showCaptcha, setCaptchaToken }: Props) => {
   const { theme } = useTheme()
+  const locale = useLocale()
 
   return (
     <div
@@ -25,7 +27,7 @@ const LoginCaptcha = ({ sitekey, showCaptcha, setCaptchaToken }: Props) => {
         sitekey={sitekey}
         onVerify={setCaptchaToken}
         theme={theme === 'dark' ? 'dark' : 'light'}
-        languageOverride={'en'}
+        languageOverride={locale === 'en' ? 'en' : 'ko'}
       />
     </div>
   )

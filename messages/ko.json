@@ -1,0 +1,36 @@
+{
+  "MainPage": {
+    "title": "조성우",
+    "description1": "탐구를 바탕으로 흐름과 구조를 정리하며, 복잡한 문제 속에서도 새로운 <strong>대안</strong>을 찾는 데 집중합니다. 복잡함을 단순하게 다듬어 더 명확한 <strong>해결</strong>로 연결합니다.",
+    "description2": "현재 <strong>네이버파이낸셜</strong>에서 프론트엔드 개발자로 일하며, 매끄러운 사용자 경험을 만들어가고 있습니다."
+  },
+  "AboutPage": {
+    "title": "소개",
+    "description": "흔적, 그리고 다음을 향한 흐름",
+    "info": "2026년 3월 18일, 새로운 기회에 도전하고 <strong>프론트엔드 개발자</strong>로서의 경력을 이어가기 위해 캐나다 <strong>밴쿠버(BC)</strong>로 이주할 예정입니다.",
+    "contact": {
+      "text1": "이메일로 언제든지 문의해 주시기 바랍니다: ",
+      "text2": "또는 ",
+      "text3": "를 확인해 주세요.",
+      "resumeTitle": "이력서"
+    }
+  },
+  "BlogPage": {
+    "title": "아카이브",
+    "description": "생각과 발견을 모아두는 공간"
+  },
+  "LoginPage": {
+    "title": "관리자 로그인",
+    "description": "관리자만 접근 가능합니다",
+    "email": "이메일",
+    "emailPlaceholder": "이메일",
+    "password": "비밀번호",
+    "passwordPlaceholder": "비밀번호",
+    "login": "로그인",
+    "pending": "로그인 중..."
+  },
+  "Components": {
+    "name": "조성우",
+    "sourceCode": "소스 코드"
+  }
+}
