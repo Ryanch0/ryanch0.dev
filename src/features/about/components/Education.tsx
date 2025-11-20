@@ -1,33 +1,36 @@
 import AboutContent from '@/features/about/components/AboutContent'
+import { getTranslations } from 'next-intl/server'
 
-const Education = () => {
+const Education = async () => {
+  const t = await getTranslations('AboutPage.aboutContent.education')
+
   return (
     <AboutContent key={'education'} title={'Education'}>
       <div className={'flex flex-col gap-4'}>
         <div>
           <h2 className={'accent-font-style'}>
-            Suwon University -{' '}
+            {t('univ.name')} -{' '}
             <span className={'font-family-sans text-sm'}>
-              B.S. in Electronic Materials Engineering
+              {t('univ.major')}
             </span>
           </h2>
           <p
             className={'text-second-light/70 dark:text-underline-dark text-sm'}
           >
-            Suwon, South Korea | Feb 2017 – Feb 2025
+            {t('univ.location')}
           </p>
         </div>
         <div>
           <h2 className={'accent-font-style'}>
-            ILAC International College -{' '}
+            {t('college.name')} -{' '}
             <span className={'font-family-sans text-sm'}>
-              Diploma in Service Excellence for Business
+              {t('college.major')}
             </span>
           </h2>
           <p
             className={'text-second-light/70 dark:text-underline-dark text-sm'}
           >
-            Vancouver, Canada | Feb 2023 – Jan 2024
+            {t('college.location')}
           </p>
         </div>
       </div>
