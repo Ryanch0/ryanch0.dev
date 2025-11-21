@@ -5,7 +5,6 @@ import {
   findAllTags,
   findPostById,
   findPostBySlug,
-  findPostsByTag,
   getNextPost,
   getPreviousPost,
   updatePost
@@ -23,12 +22,14 @@ import {
 } from '@/external/types/post/response'
 import { formatLongDate } from '@/utils/date'
 
-export const listAllPostsHandler = async (): Promise<PostListItem[]> => {
-  return await findAllPosts()
-}
+export const listAllPostsHandler = async (
+  tag?: string
+): Promise<PostListItem[]> => {
+  const data = await findAllPosts()
 
-export const listPostByTag = async (tag: string): Promise<PostListItem[]> => {
-  return await findPostsByTag(tag)
+  if (!tag) return data
+
+  return data.filter((post) => !!post.tags?.includes(tag))
 }
 
 export const findPostBySlugHandler = async (

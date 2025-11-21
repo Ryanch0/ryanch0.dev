@@ -30,7 +30,7 @@ const Page = async ({ searchParams }: Props) => {
             <TagLinkList />
           </Suspense>
           <Suspense fallback={<PostListSkeleton />}>
-            <PostList tag={tagName} />
+            <PostList key={tagName} tag={tagName} />
           </Suspense>
         </main>
       </div>
