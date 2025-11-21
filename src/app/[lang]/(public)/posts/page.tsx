@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 
 import PostList from '@/features/posts/components/PostList'
-import PostListSkeleton from '@/features/posts/components/PostListSkeleton'
+import PostListSkeleton from '@/features/posts/components/skeleton/PostListSkeleton'
 import TagLinkList from '@/features/tags/components/TagLinkList'
 import TagListSkeleton from '@/features/tags/components/TagListSkeleton'
 import Footer from '@/shared/components/Footer'
