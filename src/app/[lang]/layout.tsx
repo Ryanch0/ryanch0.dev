@@ -20,7 +20,8 @@ export async function generateMetadata({
     title: 'ryanch0.dev',
     description: 'Crafting elegant solutions from obstacles',
     ogDescription: 'Where obstacles become elegant solutions',
-    url: lang === 'en' ? '/' : '/ko'
+    url: lang === 'en' ? '/' : '/ko',
+    locale: lang
   })
 }
 

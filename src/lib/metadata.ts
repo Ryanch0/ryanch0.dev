@@ -12,14 +12,18 @@ export const createMetadata = ({
   ogTitle,
   description = siteConfig.description,
   ogDescription,
-  url = siteConfig.url
+  url = siteConfig.url,
+  locale = 'en'
 }: {
   title?: string
   ogTitle?: string
   description?: string
   ogDescription?: string
   url?: string
+  locale?: string
 }): Metadata => {
+  const absoluteUrl = `${siteConfig.url}${url}`
+
   return {
     metadataBase: new URL(siteConfig.url),
     title: title,
@@ -27,9 +31,9 @@ export const createMetadata = ({
     openGraph: {
       title: ogTitle || title,
       description: ogDescription || description,
-      url: url,
+      url: absoluteUrl,
       type: 'website',
-      locale: 'en',
+      locale: locale,
       images: siteConfig.image
     },
     twitter: {

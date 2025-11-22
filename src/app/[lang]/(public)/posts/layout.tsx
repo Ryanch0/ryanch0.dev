@@ -15,7 +15,8 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     ogDescription: t('description'),
-    url: lang === 'en' ? '/posts' : '/ko/posts'
+    url: lang === 'en' ? '/posts' : '/ko/posts',
+    locale: lang
   })
 }
 const Layout = ({ children }: PropsWithChildren) => {

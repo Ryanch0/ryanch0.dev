@@ -15,7 +15,8 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     ogDescription: t('description'),
-    url: lang === 'en' ? '/about-me' : '/ko/about-me'
+    url: lang === 'en' ? '/about-me' : '/ko/about-me',
+    locale: lang
   })
 }
 

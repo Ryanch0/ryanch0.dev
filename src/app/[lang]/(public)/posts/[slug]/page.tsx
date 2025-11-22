@@ -27,7 +27,8 @@ export const generateMetadata = async ({
     title: getColumnFromLocale(locale, data.title, data.title_kr),
     description: getColumnFromLocale(locale, data.subtitle, data.subtitle_kr),
     ogDescription: getColumnFromLocale(locale, data.subtitle, data.subtitle_kr),
-    url: locale === 'en' ? `/posts/${slug}` : `/ko/posts/${slug}`
+    url: locale === 'en' ? `/posts/${slug}` : `/ko/posts/${slug}`,
+    locale: locale
   })
 }
 
