@@ -2,9 +2,7 @@
 
 import { ReactNode } from 'react'
 
-import { Link } from '@/i18n/navigation'
 import { useLocaleHref } from '@/lib/localeHref'
-import useShouldUseTransition from '@/shared/hooks/useShouldUseTransition'
 import { Link as VTLink } from 'next-view-transitions'
 
 type Props = {
@@ -22,15 +20,6 @@ export default function LocaleTransitionLink({
   rel
 }: Props) {
   const localeHref = useLocaleHref(href)
-  const shouldUseTransition = useShouldUseTransition()
-
-  if (!shouldUseTransition) {
-    return (
-      <Link href={href} className={className} target={target} rel={rel}>
-        {children}
-      </Link>
-    )
-  }
 
   return (
     <VTLink href={localeHref} className={className} target={target} rel={rel}>
