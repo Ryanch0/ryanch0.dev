@@ -37,19 +37,18 @@ const MobileTOCWrapper = ({ title, children, isVisible = false }: Props) => {
     <motion.div
       className="fixed left-1/2 z-40 -translate-x-1/2"
       animate={{
-        top: isVisible
-          ? 'calc(3.5rem + env(safe-area-inset-top, 0px))'
-          : '-30rem'
+        top: isVisible ? 'calc(3.5rem + env(safe-area-inset-top, 0px))' : '0',
+        opacity: isVisible ? 1 : 0
       }}
-      initial={{ top: '-5rem' }}
-      transition={{ duration: 0.4, ease: 'easeInOut' }}
+      initial={{ top: '0' }}
+      transition={{ duration: 0.2, ease: 'easeInOut' }}
     >
       <motion.div
         animate={{
           width: getWidth(),
           borderRadius: isOpen ? 16 : 24
         }}
-        transition={{ duration: 0.35, ease: 'easeInOut' }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
         className={`${isOpen ? 'pt-1' : ''} relative overflow-hidden bg-white/75 shadow-lg backdrop-blur-2xl backdrop-saturate-[1.2] transition-all select-none dark:bg-zinc-500/20`}
       >
         <button

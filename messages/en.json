@@ -1,0 +1,101 @@
+{
+  "MainPage": {
+    "title": "Ryan Cho",
+    "description1": "Find clarity in complex flows and shape them into simpler, more coherent structures. Explore the smallest details and build subtle improvements that lead to better experiences.",
+    "description2": "Currently work at <strong>Naver Financial</strong> as a frontend developer."
+  },
+  "AboutPage": {
+    "title": "About",
+    "description": "Traces, and the flow toward what's next.",
+    "info": "Relocating to Vancouver, BC on March 18, 2026, to <strong>pursue</strong> new opportunities as a <strong>Frontend Developer</strong>.",
+    "contact": {
+      "text1": "Feel free to contact me at ",
+      "text2": "or download my ",
+      "text3": "",
+      "resumeTitle": "resume"
+    },
+    "aboutContent": {
+      "projects": {
+        "company": "Zium Knowledge Service",
+        "role": "Frontend Engineer at Naver Financial  <span>(Oct 2024 - Present)</span>",
+        "project1": {
+          "title": "Naver Financial - Corporate Employee Welfare Platform (Frontend Lead)",
+          "period": "Jan 2025 – Present",
+          "descriptions": {
+            "0": "Led the design and implementation of a SPA architecture using React Router Data APIs.",
+            "1": "Designed end-to-end authentication and error-handling flows between the BFF and frontend, including a custom error class–based domain exception framework.",
+            "2": "Established an asynchronous data loading structure using clientLoader and built a unified loading experience through Suspense integration.",
+            "3": "Reduced production bundle size by 30% and improved performance through lazy loading, dynamic module loading, request deduplication, and React Compiler optimizations.",
+            "4": "Built a complex form state management system using React Hook Form and Zod, including secure file signature verification.",
+            "5": "Improved production monitoring security and accuracy by applying Sentry integration with hidden sourcemaps.",
+            "6": "Established a type-safe API integration workflow using Swagger TypeScript API to improve developer productivity and backend consistency.",
+            "7": "Enhanced user experience by implementing client-side timeout handling and refetch strategies during BFF delays and gateway timeout scenarios.",
+            "8": "Implemented a Canary dark-release deployment strategy to replace the legacy Blue/Green process, enabling stable QA and progressive rollouts."
+          }
+        },
+        "project2": {
+          "title": "Naver Financial - Customer Inquiry Portal (Frontend Development, Sub Project)",
+          "period": "Oct 2024 – Jan 2025",
+          "descriptions": {
+            "0": "Implemented the customer inquiry page with requirement-driven UI improvements.",
+            "1": "Improved mobile UI stability through cross-device testing."
+          }
+        },
+        "project3": {
+          "title": "Naver Financial - Internal Admin Dashboard (Frontend Development, Sub Project)",
+          "period": "Apr 2024 – Jun 2025",
+          "descriptions": {
+            "0": "Developed internal admin dashboards using React and applied Jotai for state management.",
+            "1": "Integrated multiple BFF and backend APIs to support core features and ensure maintainable service interactions."
+          }
+        },
+        "personalProject": {
+          "heading": "Personal Project",
+          "sub-heading": "Full-stack Personal Project",
+          "title": "This Website - ryanch0.dev",
+          "period": "Oct 2025 – Nov 2025",
+          "descriptions": {
+            "0": "Built a full-stack personal blog using Next.js 15 (App Router) and Supabase for authentication, storage, and database management.",
+            "1": "Handled login and post creation logic on the server using Next.js Server Actions.",
+            "2": "Implemented a custom Markdown editor and renderer based on MDX.",
+            "3": "Built a Tailwind CSS–based design system and improved UI details.",
+            "4": "Implemented protected route handling and server-side auth verification using Next.js Middleware.",
+            "5": "Enhanced login security by integrating CAPTCHA and applying Redis-based IP rate limiting to block bot and brute-force attacks.",
+            "6": "Built an i18n locale management structure and improved routing by integrating it with Middleware.",
+            "7": "Optimized asynchronous rendering and loading flows using Suspense to reduce UX delays."
+          }
+        }
+      },
+      "education": {
+        "univ": {
+          "name": "Suwon University",
+          "major": "B.S. in Electronic Materials Engineering",
+          "location": "Suwon, South Korea | Feb 2017 – Feb 2025"
+        },
+        "college": {
+          "name": "ILAC International College",
+          "major": "Diploma in Service Excellence for Business",
+          "location": "Vancouver, Canada | Feb 2023 – Jan 2024"
+        }
+      }
+    }
+  },
+  "BlogPage": {
+    "title": "Blog Archive",
+    "description": "A space for storing insights"
+  },
+  "LoginPage": {
+    "title": "Admin Login",
+    "description": "Authorized access only",
+    "email": "Email",
+    "emailPlaceholder": "email",
+    "password": "Password",
+    "passwordPlaceholder": "password",
+    "login": "Login",
+    "pending": "Logging in..."
+  },
+  "Components": {
+    "name": "Ryan Cho",
+    "sourceCode": "Source Code"
+  }
+}

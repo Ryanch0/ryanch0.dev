@@ -1,7 +1,7 @@
 'use client'
 
 import { MotionButton } from '@/components/ui/MotionButton'
-import { Link } from 'next-view-transitions'
+import { Link } from '@/i18n/navigation'
 import { useSearchParams } from 'next/navigation'
 
 type Props = {
@@ -11,6 +11,7 @@ type Props = {
 }
 const TagLinkItem = ({ href, tagName, defaultTag }: Props) => {
   const params = useSearchParams()
+
   const tag = params.get('tag')
   const isActive = tag === tagName
   const getVariant = () => {

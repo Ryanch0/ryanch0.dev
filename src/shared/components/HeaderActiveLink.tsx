@@ -2,8 +2,8 @@
 
 import { ReactNode } from 'react'
 
-import { Link } from 'next-view-transitions'
-import { usePathname } from 'next/navigation'
+import { usePathname } from '@/i18n/navigation'
+import LocaleTransitionLink from '@/shared/components/LocaleTransitionLink'
 
 type Props = {
   className?: string
@@ -18,12 +18,12 @@ const HeaderActiveLink = ({ children, href, className }: Props) => {
     : ''
 
   return (
-    <Link
+    <LocaleTransitionLink
       href={href}
-      className={`hover:opacity-70 ${activeClassName} ${className}`}
+      className={`font-family-serif hover:opacity-70 ${activeClassName} ${className}`}
     >
       {children}
-    </Link>
+    </LocaleTransitionLink>
   )
 }
 

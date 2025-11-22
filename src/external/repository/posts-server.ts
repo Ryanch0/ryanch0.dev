@@ -6,7 +6,7 @@ export const findAllPosts = async () => {
 
   const { data: posts, error } = await supabase
     .from('posts')
-    .select('id, title, preview, tags, slug, date, subtitle')
+    .select('id, title,  tags, slug, date, subtitle, title_kr, subtitle_kr')
     .order('date', { ascending: false })
 
   if (error) {
@@ -14,21 +14,6 @@ export const findAllPosts = async () => {
   }
 
   return posts
-}
-
-export const findPostsByTag = async (tag: string) => {
-  const supabase = await createClientForServer()
-  const { error, data } = await supabase
-    .from('posts')
-    .select('id, title, preview, tags, slug, date, subtitle')
-    .order('date', { ascending: false })
-    .contains('tags', [tag])
-
-  if (error) {
-    throw new Error('Failed to fetch posts by tag')
-  }
-
-  return data
 }
 
 export const findPostBySlug = async (slug: string) => {
@@ -129,7 +114,7 @@ export const getPreviousPost = async (date: string) => {
   const supabase = await createClientForServer()
   const { data, error } = await supabase
     .from('posts')
-    .select('slug, title')
+    .select('slug, title, title_kr')
     .lt('date', date)
     .order('date', { ascending: false })
     .limit(1)
@@ -139,14 +124,18 @@ export const getPreviousPost = async (date: string) => {
     throw new Error('Failed to get previous post.')
   }
 
-  return { slug: prevData?.slug, title: prevData?.title }
+  return {
+    slug: prevData?.slug,
+    title: prevData?.title,
+    title_kr: prevData?.title_kr
+  }
 }
 
 export const getNextPost = async (date: string) => {
   const supabase = await createClientForServer()
   const { data, error } = await supabase
     .from('posts')
-    .select('slug, title')
+    .select('slug, title,title_kr')
     .gt('date', date)
     .order('date', { ascending: true })
     .limit(1)
@@ -157,5 +146,9 @@ export const getNextPost = async (date: string) => {
     throw new Error('Failed to get next post.')
   }
 
-  return { slug: nextData?.slug, title: nextData?.title }
+  return {
+    slug: nextData?.slug,
+    title: nextData?.title,
+    title_kr: nextData?.title_kr
+  }
 }

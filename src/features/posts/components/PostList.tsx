@@ -1,8 +1,5 @@
 import { PATH } from '@/constants/path'
-import {
-  listAllPostsHandler,
-  listPostByTag
-} from '@/external/handler/posts/postsHandler'
+import { listAllPostsHandler } from '@/external/handler/posts/postsHandler'
 import PostItem from '@/features/posts/components/PostItem'
 import groupHoverStyles from '@/features/posts/utils/groupHoverStyles'
 import groupPostsByYear from '@/utils/groupPostsByYear'
@@ -12,7 +9,8 @@ type Props = {
   tag?: string
 }
 const PostList = async ({ tag }: Props) => {
-  const data = tag ? await listPostByTag(tag) : await listAllPostsHandler()
+  const data = await listAllPostsHandler(tag)
+
   const postsByYear = groupPostsByYear(data)
 
   if (tag && data.length === 0) {
@@ -40,11 +38,12 @@ const PostList = async ({ tag }: Props) => {
                 {yearPosts.map((post) => {
                   return (
                     <PostItem
-                      key={post.id}
-                      preview={post.preview}
-                      slug={post.slug}
                       title={post.title}
                       subtitle={post.subtitle}
+                      title_kr={post.title_kr}
+                      subtitle_kr={post.subtitle_kr}
+                      key={post.id}
+                      slug={post.slug}
                       date={post.date}
                     />
                   )

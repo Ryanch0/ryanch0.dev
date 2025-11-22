@@ -5,16 +5,11 @@ import {
   findAllTags,
   findPostById,
   findPostBySlug,
-  findPostsByTag,
   getNextPost,
   getPreviousPost,
   updatePost
 } from '@/external/repository/posts-server'
-import {
-  generatePreview,
-  generateSlug,
-  generateTags
-} from '@/external/service/post'
+import { generateSlug, generateTags } from '@/external/service/post'
 import { Post } from '@/external/types/post/entity'
 import {
   PostForm,
@@ -23,12 +18,14 @@ import {
 } from '@/external/types/post/response'
 import { formatLongDate } from '@/utils/date'
 
-export const listAllPostsHandler = async (): Promise<PostListItem[]> => {
-  return await findAllPosts()
-}
+export const listAllPostsHandler = async (
+  tag?: string
+): Promise<PostListItem[]> => {
+  const data = await findAllPosts()
 
-export const listPostByTag = async (tag: string): Promise<PostListItem[]> => {
-  return await findPostsByTag(tag)
+  if (!tag) return data
+
+  return data.filter((post) => !!post.tags?.includes(tag))
 }
 
 export const findPostBySlugHandler = async (
@@ -69,21 +66,18 @@ export const createPostHandler = async (
   const tags = generateTags(tagsString)
   const slug = generateSlug(title)
 
-  const preview = generatePreview(content, 200)
-
   const date = new Date().toISOString()
-
-  const meta_description = generatePreview(content, 150)
 
   const dto = {
     title,
+    title_kr: '',
     subtitle,
+    subtitle_kr: '',
     content,
+    content_kr: '',
     tags,
     slug,
-    preview,
-    date,
-    meta_description
+    date
   }
 
   return await createPost(dto)
@@ -97,19 +91,14 @@ export const updatePostHandler = async (
   tagsString: string
 ): Promise<PostSlug> => {
   const tags = generateTags(tagsString)
-  const preview = generatePreview(content, 200)
 
   const last_modified = new Date().toISOString()
-
-  const meta_description = generatePreview(content, 150)
 
   const dto = {
     title,
     subtitle,
     content,
     tags,
-    preview,
-    meta_description,
     last_modified
   }
 
