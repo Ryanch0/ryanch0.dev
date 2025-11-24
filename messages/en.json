@@ -28,7 +28,7 @@
             "3": "Reduced production bundle size by 30% and improved performance through lazy loading, dynamic module loading, request deduplication, and React Compiler optimizations.",
             "4": "Built a complex form state management system using React Hook Form and Zod, including secure file signature verification.",
             "5": "Improved production monitoring security and accuracy by applying Sentry integration with hidden sourcemaps.",
-            "6": "Established a type-safe API integration workflow using Swagger TypeScript API to improve developer productivity and backend consistency.",
+            "6": "Enhanced development efficiency and API reliability by introducing a standardized, type-safe API integration workflow, reducing integration errors and improving backend data consistency.",
             "7": "Enhanced user experience by implementing client-side timeout handling and refetch strategies during BFF delays and gateway timeout scenarios.",
             "8": "Implemented a Canary dark-release deployment strategy to replace the legacy Blue/Green process, enabling stable QA and progressive rollouts."
           }
