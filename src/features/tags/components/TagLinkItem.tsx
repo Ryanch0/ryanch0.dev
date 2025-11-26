@@ -25,7 +25,7 @@ const TagLinkItem = ({ href, tagName, defaultTag }: Props) => {
   }
 
   return (
-    <Link href={href}>
+    <Link href={href} prefetch>
       <MotionButton
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
