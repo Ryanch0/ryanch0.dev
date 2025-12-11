@@ -1,56 +1,16 @@
-import { PATH } from '@/constants/path'
-import { createClientForServer } from '@/lib/supabase/server'
-import createIntlMiddleware from 'next-intl/middleware'
-import { NextRequest, NextResponse } from 'next/server'
-
-import { routing } from './i18n/routing'
-
-const intlMiddleware = createIntlMiddleware(routing)
+import { authMiddleware } from '@/lib/middleware/auth'
+import { intlMiddleware } from '@/lib/middleware/intl'
+import { withIp } from '@/lib/middleware/ip'
+import { NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
   const intlResponse = intlMiddleware(request)
 
-  if (intlResponse && intlResponse.redirected) {
-    // return if next-intl would request redirect-
-    return intlResponse
-  }
+  if (intlResponse?.redirected) return intlResponse
 
-  const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('x-real-ip') ||
-    'unknown'
+  const ipResponse = withIp(request, intlResponse)
 
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('x-client-ip', ip)
-
-  // override headers if there is response from next-intl
-  const response =
-    intlResponse instanceof NextResponse ? intlResponse : NextResponse.next()
-
-  response.headers.set('x-client-ip', ip)
-
-  //auth protect area from here
-  const protectedPaths = ['/write']
-
-  const pathname = request.nextUrl.pathname
-  const isProtected = protectedPaths.some((p) => pathname.startsWith(p))
-
-  if (isProtected) {
-    const supabase = await createClientForServer()
-    const {
-      data: { user },
-      error
-    } = await supabase.auth.getUser()
-
-    if (!user || error) {
-      const redirectUrl = new URL(PATH.LOGIN, request.url)
-      redirectUrl.searchParams.set('redirect', pathname)
-
-      return NextResponse.redirect(redirectUrl)
-    }
-  }
-
-  return response
+  return await authMiddleware(request, ipResponse)
 }
 
 export const config = {
