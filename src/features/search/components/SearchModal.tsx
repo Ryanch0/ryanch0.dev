@@ -22,8 +22,16 @@ type Props = {
 }
 
 const SearchModal = ({ isOpen, onClose }: Props) => {
-  const { search, posts, loading, onChange, onCloseModal, onSelect, locale } =
-    useSearchModalUseCase({ onClose, isOpen })
+  const {
+    search,
+    posts,
+    loading,
+    error,
+    onChange,
+    onCloseModal,
+    onSelect,
+    locale
+  } = useSearchModalUseCase({ onClose, isOpen })
 
   const renderResults = () => {
     if (loading) {
@@ -49,6 +57,14 @@ const SearchModal = ({ isOpen, onClose }: Props) => {
       return (
         <div className="text-second-light dark:text-second-dark py-12 text-center text-sm">
           Start typing to search...
+        </div>
+      )
+    }
+
+    if (error) {
+      return (
+        <div className="text-second-light dark:text-second-dark py-12 text-center text-sm">
+          {`Failed to fetch posts! [${error.message}]`}
         </div>
       )
     }

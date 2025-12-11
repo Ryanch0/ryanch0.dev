@@ -1,10 +1,22 @@
 import { useEffect, useState } from 'react'
 
 import { PATH } from '@/constants/path'
+import { PostListItem } from '@/external/types/post/response'
 import useDebounce from '@/features/search/hooks/useDebounce'
 import useFetchSearchedPosts from '@/features/search/hooks/useFetchSearchedPosts'
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
+
+type UseSearchModalReturn = {
+  search: string
+  posts: PostListItem[]
+  loading: boolean
+  error: Error | null
+  onChange: (val: string) => void
+  onCloseModal: () => void
+  onSelect: (val: string) => void
+  locale: string
+}
 
 const useSearchModalUseCase = ({
   onClose,
@@ -12,13 +24,15 @@ const useSearchModalUseCase = ({
 }: {
   onClose: () => void
   isOpen: boolean
-}) => {
+}): UseSearchModalReturn => {
   const [search, setSearch] = useState('')
   const debouncedSearch = useDebounce(search, 200)
   const pathname = usePathname()
   const { push } = useRouter()
 
-  const { posts, loading } = useFetchSearchedPosts({ search: debouncedSearch })
+  const { posts, loading, error } = useFetchSearchedPosts({
+    search: debouncedSearch
+  })
   const locale = useLocale()
 
   const onChange = (val: string) => {
@@ -50,6 +64,7 @@ const useSearchModalUseCase = ({
     search,
     posts,
     loading,
+    error,
     onChange,
     onCloseModal,
     onSelect,
