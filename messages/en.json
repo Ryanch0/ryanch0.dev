@@ -22,15 +22,15 @@
           "title": "Naver Financial - Corporate Employee Welfare Platform (Frontend Lead)",
           "period": "Jan 2025 – Present",
           "descriptions": {
-            "0": "Led the design and implementation of a SPA architecture using React Router Data APIs.",
+            "0": "Led the design and implementation of a scalable SPA architecture using React Router Data APIs.",
             "1": "Designed end-to-end authentication and error-handling flows between the BFF and frontend, including a custom error class–based domain exception framework.",
-            "2": "Established an asynchronous data loading structure using clientLoader and built a unified loading experience through Suspense integration.",
-            "3": "Reduced production bundle size by 30% and improved performance through lazy loading, dynamic module loading, request deduplication, and React Compiler optimizations.",
+            "2": "Established a consistent async data-loading structure by separating route-level checks from client-side data fetching, primarily using React Query.",
+            "3": "Reduced production bundle size by 30% and improved performance through lazy loading, dynamic module loading, and request deduplication.",
             "4": "Built a complex form state management system using React Hook Form and Zod, including secure file signature verification.",
             "5": "Improved production monitoring security and accuracy by applying Sentry integration with hidden sourcemaps.",
             "6": "Enhanced development efficiency and API reliability by introducing a standardized, type-safe API integration workflow, reducing integration errors and improving backend data consistency.",
             "7": "Enhanced user experience by implementing client-side timeout handling and refetch strategies during BFF delays and gateway timeout scenarios.",
-            "8": "Implemented a Canary dark-release deployment strategy to replace the legacy Blue/Green process, enabling stable QA and progressive rollouts."
+            "8": "Contributed to implementing a Canary dark-release deployment strategy to replace the legacy Blue/Green process, enabling stable QA and progressive rollouts."
           }
         },
         "project2": {
