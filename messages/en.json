@@ -57,12 +57,13 @@
           "descriptions": {
             "0": "Built a full-stack personal blog using Next.js 15 (App Router) and Supabase for authentication, storage, and database management.",
             "1": "Handled login and post creation logic on the server using Next.js Server Actions.",
-            "2": "Implemented a custom Markdown editor and renderer based on MDX.",
-            "3": "Built a Tailwind CSS–based design system and improved UI details.",
-            "4": "Implemented protected route handling and server-side auth verification using Next.js Middleware.",
-            "5": "Enhanced login security by integrating CAPTCHA and applying Redis-based IP rate limiting to block bot and brute-force attacks.",
-            "6": "Built an i18n locale management structure and improved routing by integrating it with Middleware.",
-            "7": "Optimized asynchronous rendering and loading flows using Suspense to reduce UX delays."
+            "2": "Adopted a static-first rendering strategy with on-demand revalidation using revalidatePath to balance performance and content freshness.",
+            "3": "Implemented a custom Markdown editor and renderer based on MDX.",
+            "4": "Built a Tailwind CSS–based design system and improved UI details.",
+            "5": "Implemented protected route handling and server-side auth verification using Next.js Middleware.",
+            "6": "Enhanced login security by integrating CAPTCHA and applying Redis-based IP rate limiting to block bot and brute-force attacks.",
+            "7": "Built an i18n locale management structure and improved routing by integrating it with Middleware.",
+            "8": "Optimized asynchronous rendering and loading flows using Suspense to reduce UX delays."
           }
         }
       },

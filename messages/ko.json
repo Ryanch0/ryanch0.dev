@@ -57,12 +57,13 @@
           "descriptions": {
             "0": "Next.js 15(App Router)와 Supabase 기반 인증·스토리지·DB를 포함한 풀스택 개인 블로그 구축.",
             "1": "Next.js Server Actions를 활용해 로그인 및 게시물 생성 로직을 서버 측에서 처리.",
-            "2": "MDX 기반의 커스텀 Markdown 에디터 및 렌더러 구현.",
-            "3": "Tailwind CSS 기반 디자인 시스템 구축 및 UI 디테일 개선.",
-            "4": "Next.js Middleware 기반 보호 경로 처리 및 서버 사이드 인증 검증 구조 구성.",
-            "5": "CAPTCHA 통합 및 Redis 기반 IP Rate Limit로 봇 공격·Brute Force Attack 차단.",
-            "6": "i18n 환경을 위한 locale 관리 구조 구축 및 Middleware와 연계한 라우팅 개선.",
-            "7": "Suspense를 활용한 비동기 렌더링·로딩 체계 최적화로 UX 지연 최소화."
+            "2": "정적 렌더링(SSG) 전략 우선 설계 및 콘텐츠 변경 시 revalidatePath 기반 재검증 즉시 적용, 성능과 최신성의 균형 유지.",
+            "3": "MDX 기반의 커스텀 Markdown 에디터 및 렌더러 구현.",
+            "4": "Tailwind CSS 기반 디자인 시스템 구축 및 UI 디테일 개선.",
+            "5": "Next.js Middleware 기반 보호 경로 처리 및 서버 사이드 인증 검증 구조 구성.",
+            "6": "CAPTCHA 통합 및 Redis 기반 IP Rate Limit로 봇 공격·Brute Force Attack 차단.",
+            "7": "i18n 환경을 위한 locale 관리 구조 구축 및 Middleware와 연계한 라우팅 개선.",
+            "8": "Suspense를 활용한 비동기 렌더링·로딩 체계 최적화로 UX 지연 최소화."
           }
         }
       },
