@@ -120,6 +120,10 @@
   @apply mx-auto w-full px-4 md:max-w-3xl md:px-6;
 }
 
+@utility layout-content-wrapper {
+  @apply flex flex-col gap-20 pt-6 sm:gap-30 sm:pt-18;
+}
+
 @utility layout-content {
   @apply mt-6 flex flex-col;
 }

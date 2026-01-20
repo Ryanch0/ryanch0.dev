@@ -18,7 +18,7 @@ const Page = async ({ searchParams }: Props) => {
   const t = await getTranslations('BlogPage')
 
   return (
-    <div className={'flex flex-col gap-30 pt-6 sm:pt-18'}>
+    <div className={'layout-content-wrapper'}>
       <div>
         <h2 className={'title-style'}>{t('title')}</h2>
         <div className={'second-font-style py-1'}>

@@ -12,7 +12,7 @@ const Page = async () => {
   const t = await getTranslations('AboutPage')
 
   return (
-    <div className={'flex flex-col gap-30 pt-6 sm:pt-18'}>
+    <div className={'layout-content-wrapper'}>
       <div>
         <h2 className={'title-style'}>{t('title')}</h2>
         <div className={'second-font-style py-1'}>

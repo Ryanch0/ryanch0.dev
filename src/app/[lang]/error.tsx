@@ -8,7 +8,7 @@ const Error = () => {
   return (
     <main className="layout">
       <Header />
-      <div className={'flex flex-col gap-30 pt-18'}>
+      <div className={'layout-content-wrapper'}>
         <div>
           <h2 className={'title-style'}>Error</h2>
           <div className={'second-font-style py-1'}>
