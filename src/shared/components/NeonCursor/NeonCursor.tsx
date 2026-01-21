@@ -85,6 +85,7 @@ const NeonCursor = () => {
   return (
     <div className="neon-cursor-container">
       <motion.div
+        initial={false}
         className="cursor-main"
         animate={{
           x: position.x - 5,
@@ -99,6 +100,7 @@ const NeonCursor = () => {
         }}
       />
       <motion.div
+        initial={false}
         className="cursor-trail"
         animate={{
           x: position.x - 17,
@@ -112,6 +114,7 @@ const NeonCursor = () => {
         }}
       />
       <motion.div
+        initial={false}
         className="cursor-glow"
         animate={{
           x: position.x - 34,
